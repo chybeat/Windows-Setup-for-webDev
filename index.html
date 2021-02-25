@@ -128,7 +128,7 @@
                         <li>
                             <p><strong><u>Package control</u>:</strong></p>
                             <p>Open "<strong>view</strong>" menu and click on <strong>"show console"</strong>.</p>
-                            <a class="imgGuide" href="assets/st3_showconsole.jpg"><img  src="assets/st3_showconsole.jpg"></a>
+                            <a class="imgGuide" href="assets/st3_showconsole.jpg"><img src="assets/st3_showconsole.jpg"></a>
                             <p>Insert the next code in console:
                             <code class="oneline">import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaeeebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)</code></p>
                             <p>For more information refer to <a target="_blank" href="https://packagecontrol.io/installation">https://packagecontrol.io/installation</a></p>
@@ -140,43 +140,41 @@
                         <li>
                             <p><strong><u>AdvancedNewFile</u>:</strong> <a target="_blank" href="https://github.com/skuroda/Sublime-AdvancedNewFile#usage">https://github.com/skuroda/Sublime-AdvancedNewFile#usage</a></p>
                             <p>Advanced file creation for Sublime Text 2 and Sublime Text 3 (<strong>Ctrl + Alt + N</strong>)</p>
-                            <a class="imgGuide" href="assets/st3_AdvancedNewFile.jpg"><img  src="assets/st3_AdvancedNewFile.jpg"></a>
+                            <a class="imgGuide" href="assets/st3_AdvancedNewFile.jpg"><img src="assets/st3_AdvancedNewFile.jpg"></a>
                             <p><strong>Use:</strong> (<strong>Ctrl + Alt + N</strong>) bring up the AdvancedNewFile input. Then, enter the path, along with the file name into the input field. Upon pressing enter, the file will be created. In addition, if the directories specified do not yet exists, they will also be created. By default, the path to the file being created will be filled shown in the status bar as you enter the path information.</p>
                             <p> For more advanced usage of this plugin, be sure to look at <a target="_blank" href="https://github.com/skuroda/Sublime-AdvancedNewFile"> Advanced Path Usage</a>. </p>
                         </li>
                         <li>
                             <p><strong><u>AutoFileName</u>:</strong> <a target="_blank" href="https://github.com/liamcain/AutoFileName#usage">https://github.com/BoundInCode/AutoFileName#usage</a></p>
-                            <a class="imgGuide" href="assets/st3_AutoFileName.jpg"><img  src="assets/st3_AutoFileName.jpg"></a><p>Whether your making a <code>img</code> tag in html, setting a background image in css, or linking a <code>.js</code> file to your html (or whatever else people use filename paths for these days...), you can now autocomplete the filename. Plus, it uses the built-in autocomplete, so no need to learn another pesky shortcut.</p>
+                            <p><a class="imgGuide" href="assets/st3_AutoFileName.jpg"><img src="assets/st3_AutoFileName.jpg"></a>Whether your making a <code>img</code> tag in html, setting a image in css, or linking a <code>.js</code> file to your html (or whatever else people use filename paths for these days), you can now autocomplete the filename. Plus, it uses the built-in autocomplete, so no need to learn another pesky shortcut.</p>
                         </li>
                         <li>
                             <p><strong><u>Autoprefixer</u>:</strong> <a target="_blank" href="https://github.com/sindresorhus/sublime-autoprefixer#getting-started">https://github.com/sindresorhus/sublime-autoprefixer#getting-started</a></p>
-                            <p>You shouldn't have to care about vendor/old navigators prefixes. Now you don't have to!</p>
-                            <p>Adding prefixes manually is a chore. It's also hard to keep track of where and which prefixes are needed. This plugin uses the <a target="_blank" href="https://github.com/postcss/autoprefixer">Autoprefixer</a> module to prefix properties and values according to the <a target="_blank" href="https://caniuse.com" rel="nofollow">Can I Use</a> database. Which means it will only add the necessary prefixes and not bloat your stylesheet. It even lets you specify what browsers you want to target. In addition it will remove existing prefixes which are no longer needed.</p>
-                            <p>Works with CSS and SCSS, but not other preprocessors.</p>
+                            <p>Use: In .scss or .css open command pallete (<strong>Shift + Ctrl + P</strong>) and type Autoprefix CSS, and press enter. For best compatibility in autoprefixer, set in user settings this config: <code>{"browsers": ["last 5 versions","> .5%"],}</code></p>
+                            <a class="imgGuide" href="assets/st3_autoprefixer.gif"><img src="assets/st3_autoprefixer.gif"></a>
+                            <p>This plugin uses the <a target="_blank" href="https://github.com/postcss/autoprefixer">Autoprefixer</a> module to prefix properties and values according to the <a target="_blank" href="https://caniuse.com">Can I Use</a> database. Works with CSS and SCSS, but not other preprocessors. Requires <a target="_blank" href="https://nodejs.org/en/download/">Node.js</a> 10+ installed</p>
                         </li>
                         <li>
                             <p><strong><u>BracketHighlighter</u>:</strong> <a target="_blank" href="https://facelessuser.github.io/BracketHighlighter/usage/">https://facelessuser.github.io/BracketHighlighter/usage/</a></p>
+                            <a class="imgGuide" href="assets/st3_BracketHihglighter.jpg"><img src="assets/st3_BracketHihglighter.jpg"></a>
+                            <p>Set in Sublime Text user preferences (<strong>Preferences > Settings</strong>), next lines to avoid conflicts with BracketHighlighter and Sublime Text key bindings.</p>
+                            <code>"match_brackets": false,<br />
+                            "match_brackets_angle": false,<br />
+                            "match_brackets_braces": false,<br />
+                            "match_brackets_content": false,<br />
+                            "match_brackets_square": false,<br />
+                            "match_tags": false</code>
                             <p>BracketHighlighter matches a variety of brackets such as: <code>[]</code>, <code>()</code>, <code>{}</code>, <code>""</code>, <code>''</code>, <code class="highlight"><span class="nt">&lt;tag&gt;&lt;/tag&gt;</span></code>, and even custom brackets.</p>
                             <p>This was originally forked from pyparadigm's <em>SublimeBrackets</em> and <em>SublimeTagmatcher</em> (both are no longer available). I forked his repositories to fix a number issues I add some features I had wanted. I also wanted to improve the efficiency of the matching. Moving forward, I have thrown away all of the code and have completely rewritten the entire code base to allow for more flexibility, faster matching, and a more feature rich experience.</p>
-                            <p>Set in Sublime Text user preferences (<strong>Preferences > Settings</strong>), next lines to avoid conflicts with BracketHighlighter<br />
-                                <code>"match_brackets": false,<br />
-                                    "match_brackets_angle": false,<br />
-                                    "match_brackets_braces": false,<br />
-                                    "match_brackets_content": false,<br />
-                                    "match_brackets_square": false,<br />
-                                    "match_tags": false</code></p>
                         </li>
                         <li>
-                            <p><strong><u>Comment-Snippets</u>:</strong> <a target="_blank" href="https://github.com/hachesilva/Comment-Snippets#comment-snippets-for-sublime-text">https://github.com/hachesilva/Comment-Snippets#comment-snippets-for-sublime-text</a></p>
-                            <p>Several snippets to create some fancy PHP, CSS and HTML comments in Sublime Text.</p>
-                        </li>https://emmet.io/download/
-                        <li>
                             <p><strong><u>Compass</u>:</strong> <a target="_blank" href="https://packagecontrol.io/packages/Compass">https://packagecontrol.io/packages/Compass</a></p>
-                            <p>Adds a Build System for Compass Watch when opening SASS Files. (Sublime-Text-2-SASS-Package or similar SASS Package needed). <u>Create a project and place the Sublime Text Project file in your project's folder root</u>. Example: yourproject/project.sublime-project <strong>A Sublime Text Project File in the root of your project is necessary.</strong></p>
-                            <p><strong><u>REMEMBER</u></strong> A config.rb file is created when save/build a SASS file, move the file to project root and edit to match the folders tree and set the "output_style" (:nested, :expanded, :compact, :compressed). More infor at <a target="blank" href="http://compass-style.org/help/documentation/configuration-reference/">Compass documentation</a></p>
+                            <a class="imgGuide" href="assets/st3_BracketHihglighter.jpg"><img src="assets/st3_BracketHihglighter.jpg"></a><p>Adds a Build System for Compass Watch when opening SASS Files. (Sublime-Text-2-SASS-Package or similar SASS Package needed). <u>Create a project and place the Sublime Text Project file in your project's folder root</u>. Example: yourproject/project.sublime-project <strong>A Sublime Text Project File in the root of your project is necessary.</strong></p>
+                            <p><strong><u>REMEMBER</u></strong> A config.rb file is created when save/build a SASS file, move the file to project root and edit to match the folders tree and set the "output_style" (:nested, :expanded, :compact, :compressed). More information at <a target="blank" href="http://compass-style.org/help/documentation/configuration-reference/">Compass documentation</a></p>
                         </li>
                         <li>
                             <p><strong><u>Emmet</u>:</strong> <a target="_blank" href="https://github.com/emmetio/sublime-text-plugin#emmet-2-for-sublime-text-editor">https://github.com/emmetio/sublime-text-plugin#emmet-2-for-sublime-text-editor</a></p>
+                            <a class="imgGuide" href="assets/st3_emmet.png"><img src="assets/st3_emmet.png"></a>
                             <p>Emmet is a plugin for many popular text editors which greatly improves HTML & CSS workflow. Read the <a target="blank" href="https://docs.emmet.io/cheat-sheet/">Cheat sheet</a> for use</p>
                         </li>
                         <li>
