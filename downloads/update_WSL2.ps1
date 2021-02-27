@@ -1,15 +1,14 @@
 ﻿#variable de descarga de ubuntu desde microsoft, si existe una uri mas actual, se puede actualizar
 $uriForLinux = "https://aka.ms/wslubuntu2004"
 
-If (-NOT ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator))
-{
+If (-NOT ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)){
   # Relaunch as an elevated process:
   Start-Process powershell.exe "-File",('"{0}"' -f $MyInvocation.MyCommand.Path) -Verb RunAs
   exit
 }
 $DesktopPath = [Environment]::GetFolderPath("Desktop")
 
-cls
+cls;
 function Show-txt($txt){
     Write-Host -ForegroundColor Yellow -BackgroundColor Black $txt
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -30,14 +30,12 @@
             <h3>Required utilities</h3>
             <p>Programs required/support plugins or extension</p>
             <ol>
-                <li><a target="_blank" href="https://nodejs.org/en/download/">Node.js<div class="logo inline"><img class="nodejs" src="assets/nodejsLogo.svg"></div></a> - Node.js® A JavaScript software environment build with Chrome JavaScript V8 engine.
+                <li><a target="_blank" href="https://nodejs.org/en/download/">Node.js<div class="logo inline"><img class="nodejs" src="assets/nodejsLogo.svg"></div></a> - Node.js &reg; A JavaScript software environment build with Chrome JavaScript V8 engine.
                     <ol type="a">
                         <p>Run from Node.js Command-Line:</p>
                         <li><code class="oneline">npm install -g clean-css-cli uglifycss js-beautify html-minifier uglify-js minjson svgo</code> <span>(Used to run minify package in Sublime Text)</span></li>
                         <li><code class="oneline">npm install -g clean-css-cli uglifycss js-beautify html-minifier uglify-js minjson svgo</code> <span>(Used to run minify package in Sublime Text)</span></li>
-                        <li><code class="oneline">npm install -g csslint</code><span>(Used to linter CSS code in Sublime Text)</span></li>
-                        <li><code class="oneline">npm install -g jshint</code><span>(Used to linter JavaScript code in Sublime Text)</span></li>
-                        <li><code class="oneline">npm install -g sass-lint</code><span>(Used to linter SASS/SCSS code in Sublime Text)</span></li>
+                        <li><code class="oneline">npm install -g htmllint-cli<span>(Used to linter HTML code in Sublime Text)</span></code></li>
                     </ol>
                 </li>
                 <li>
@@ -56,7 +54,7 @@
                     </ol>
                 </li>
                 <li>
-                    <a href="ms-windows-store://pdp/?ProductId=9N0DX20HK701">Windows terminal (from Microsoft Store) <div class="logo inline"><img class="windowsTerminal" src="assets/windowsTerminalLogo.svg" /></div></a> - Windows Terminal is a new, modern, feature-rich, productive terminal application for command-line users. It includes many of the features most frequently requested by the Windows command-line community including support for tabs, rich text, globalization, configurability, theming & styling, and more.
+                    <a href="ms-windows-store://pdp/?ProductId=9N0DX20HK701">Windows terminal (from Microsoft Store) <div class="logo inline"><img class="windowsTerminal" src="assets/windowsTerminalLogo.svg" /></div></a> - Windows Terminal is a new, modern, feature-rich, productive terminal application for command-line users. It includes many of the features most frequently requested by the Windows command-line community including support for tabs, rich text, globalization, configurability, theming and styling, and more.
                 </li>
                 <li><a target="_blank" href="https://www.heidisql.com/download.php">Heidy Sql<div class="logo inline"><img class="heidySql" src="assets/heidySqlLogo.svg" /></div></a> - HeidiSQL is free software lets you see and edit data and structures from computers running one of the database systems MariaDB, MySQL, Microsoft SQL, PostgreSQL and SQLite.</li>
                 <li><a target="_blank" href="https://dev.mysql.com/downloads/windows/installer/8.0.html">Mysql Comunity<div class="logo inline"><img class="mysql" src="assets/mysqlLogo.svg" /></div></a> - MySQL Community Edition is a RDBMS freely downloadable version of the world's most popular open source database based on SQL – Structured Query Language.</li>
@@ -82,7 +80,7 @@
                     </p>
                 </li>
                 <li>
-                    <p> <strong>&gt;&gt;&gt;&gt; At this point a computer restart is required. &lt;&lt;&lt;&lt; </strong></p>
+                    <p> <strong>&gt&gt&gt&gt At this point a computer restart is required. &lt&lt&lt&lt </strong></p>
                 </li>
                 <li>
                     <p>Download from <a href="https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi">here</a> the <a target="_blank" href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">Windows Subsystem for Linux 2</a> kernel Update. Then install it.</p>
@@ -103,8 +101,8 @@
                     <p>Change home (~) Directory:</p>
                     <ol>
                         <li>Run in terminal: <code>sudo vim /etc/passwd</code></li>
-                        <li>Search for username:x:1000:1000:"",,,:/home/&lt;username&gt;:/bin/bash</li>
-                        <li>then change <strong>/home/&lt;username&gt;</strong> for <strong>/mnt/d</strong> or wanted folder</li>
+                        <li>Search for username:x:1000:1000:"",,,:/home/&ltusername&gt:/bin/bash</li>
+                        <li>then change <strong>/home/&ltusername&gt</strong> for <strong>/mnt/d</strong> or wanted folder</li>
                         <li>Save file and exit from vim pressing <stromg>Esc</stromg> and writing <code>:wq</code>, press <strong>Enter</strong>.</li>
                         <li>Exit from terminal with <code>logout</code></li>
                         <li>To verify Enter again to terminal anb writing <code>cd ~</code> and press <strong>Enter</strong></li>
@@ -133,97 +131,92 @@
                         <li>
                             <p><strong><u>Package control</u>:</strong></p>
                             <p>Open "<strong>view</strong>" menu and click on <strong>"show console"</strong>.</p>
-                            <a class="img-guide" href="assets/st3_showconsole.jpg"><img src="assets/st3_showconsole.jpg"></a>
+                            <a class="imgGuide" href="assets/st3_showconsole.jpg"><img src="assets/st3_showconsole.jpg"></a>
                             <p>Insert the next code in console:
-                                <code class="oneline">import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaeeebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)</code></p>
+                                <code class="oneline">import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaeeebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)</code>
+                            </p>
                             <p>For more information refer to <a target="_blank" href="https://packagecontrol.io/installation">https://packagecontrol.io/installation</a></p>
                         </li>
                     </ul>
-                    <p>All next packages needs to be installed from package installer in Package Control (<strong>SHIFT + CTRL + P</strong> &gt; <strong>Package Control: Install pacakge</strong>), and typing the package name</p>
+                    <p>All next packages needs to be installed from package installer in Package Control (<strong>SHIFT + CTRL + P</strong> &gt <strong>Package Control: Install pacakge</strong>), and typing the package name</p>
                     <ul>
                         <li>
                             <p><strong><u>AdvancedNewFile</u>:</strong> <a target="_blank" href="https://github.com/skuroda/Sublime-AdvancedNewFile#usage">https://github.com/skuroda/Sublime-AdvancedNewFile#usage</a></p>
                             <p>Advanced file creation for Sublime Text 2 and Sublime Text 3 (<strong>Ctrl + Alt + N</strong>)</p>
-                            <a class="img-guide" href="assets/st3_AdvancedNewFile.jpg"><img src="assets/st3_AdvancedNewFile.jpg"></a>
+                            <a class="imgGuide" href="assets/st3_AdvancedNewFile.jpg"><img src="assets/st3_AdvancedNewFile.jpg"></a>
                             <p><strong>Use:</strong> (<strong>Ctrl + Alt + N</strong>) bring up the AdvancedNewFile input. Then, enter the path, along with the file name into the input field. Upon pressing enter, the file will be created. In addition, if the directories specified do not yet exists, they will also be created. By default, the path to the file being created will be filled shown in the status bar as you enter the path information.</p>
                             <p> For more advanced usage of this plugin, be sure to look at <a target="_blank" href="https://github.com/skuroda/Sublime-AdvancedNewFile"> Advanced Path Usage</a>. </p>
                         </li>
                         <li>
                             <p><strong><u>AutoFileName</u>:</strong> <a target="_blank" href="https://github.com/liamcain/AutoFileName#usage">https://github.com/BoundInCode/AutoFileName#usage</a></p>
-                            <p><a class="img-guide" href="assets/st3_AutoFileName.jpg"><img src="assets/st3_AutoFileName.jpg"></a>Whether your making a <code>img</code> tag in html, setting a image in css, or linking a <code>.js</code> file to your html (or whatever else people use filename paths for these days), you can now autocomplete the filename. Plus, it uses the built-in autocomplete, so no need to learn another pesky shortcut.</p>
+                            <p><a class="imgGuide" href="assets/st3_AutoFileName.jpg"><img src="assets/st3_AutoFileName.jpg"></a>Whether your making a <code>img</code> tag in html, setting a image in css, or linking a <code>.js</code> file to your html (or whatever else people use filename paths for these days), you can now autocomplete the filename. Plus, it uses the built-in autocomplete, so no need to learn another pesky shortcut.</p>
                         </li>
                         <li>
                             <p><strong><u>Autoprefixer</u>:</strong> <a target="_blank" href="https://github.com/sindresorhus/sublime-autoprefixer#getting-started">https://github.com/sindresorhus/sublime-autoprefixer#getting-started</a></p>
                             <p>Use: In .scss or .css open command pallete (<strong>Shift + Ctrl + P</strong>) and type Autoprefix CSS, and press enter. For best compatibility in autoprefixer, set in user settings this config: <code>{"browsers": ["last 5 versions","> .5%"],}</code></p>
-                            <a class="img-guide" href="assets/st3_autoprefixer.gif"><img src="assets/st3_autoprefixer.gif"></a>
+                            <a class="imgGuide" href="assets/st3_autoprefixer.gif"><img src="assets/st3_autoprefixer.gif"></a>
                             <p>This plugin uses the <a target="_blank" href="https://github.com/postcss/autoprefixer">Autoprefixer</a> module to prefix properties and values according to the <a target="_blank" href="https://caniuse.com">Can I Use</a> database. Works with CSS and SCSS, but not other preprocessors. Requires <a target="_blank" href="https://nodejs.org/en/download/">Node.js</a> 10+ installed</p>
                         </li>
                         <li>
                             <p><strong><u>BracketHighlighter</u>:</strong> <a target="_blank" href="https://facelessuser.github.io/BracketHighlighter/usage/">https://facelessuser.github.io/BracketHighlighter/usage/</a></p>
-                            <a class="img-guide" href="assets/st3_BracketHihglighter.jpg"><img src="assets/st3_BracketHihglighter.jpg"></a>
-                            <p>Set in Sublime Text user preferences (<strong>Preferences &gt; Settings</strong>), next lines to avoid conflicts with BracketHighlighter and Sublime Text key bindings.</p>
+                            <a class="imgGuide" href="assets/st3_BracketHihglighter.jpg"><img src="assets/st3_BracketHihglighter.jpg"></a>
+                            <p>Set in Sublime Text user preferences (<strong>Preferences &gt Settings</strong>), next lines to avoid conflicts with BracketHighlighter and Sublime Text key bindings.</p>
                             <code>"match_brackets": false,<br />
                                 "match_brackets_angle": false,<br />
                                 "match_brackets_braces": false,<br />
                                 "match_brackets_content": false,<br />
                                 "match_brackets_square": false,<br />
                                 "match_tags": false</code>
-                            <p>BracketHighlighter matches a variety of brackets such as: <code>[]</code>, <code>()</code>, <code>{}</code>, <code>""</code>, <code>''</code>, <code class="highlight"><span class="nt">&lt;;tag&gt;;&lt;;/tag&gt;;</span></code>, and even custom brackets.</p>
+                            <p>BracketHighlighter matches a variety of brackets such as: <code>[]</code>, <code>()</code>, <code>{}</code>, <code>""</code>, <code>''</code>, <code class="highlight"><span class="nt">&lt;tag&gt;&lt;/tag&gt;</span></code>, and even custom brackets.</p>
                             <p>This was originally forked from pyparadigm's <em>SublimeBrackets</em> and <em>SublimeTagmatcher</em> (both are no longer available). I forked his repositories to fix a number issues I add some features I had wanted. I also wanted to improve the efficiency of the matching. Moving forward, I have thrown away all of the code and have completely rewritten the entire code base to allow for more flexibility, faster matching, and a more feature rich experience.</p>
                         </li>
                         <li>
                             <p><strong><u>Compass</u>:</strong> <a target="_blank" href="https://packagecontrol.io/packages/Compass">https://packagecontrol.io/packages/Compass</a></p>
-                            <a class="img-guide" href="assets/st3_BracketHihglighter.jpg"><img src="assets/st3_BracketHihglighter.jpg"></a>
+                            <a class="imgGuide" href="assets/st3_BracketHihglighter.jpg"><img src="assets/st3_BracketHihglighter.jpg"></a>
                             <p>Adds a Build System for Compass Watch when opening SASS Files. (Sublime-Text-2-SASS-Package or similar SASS Package needed). <u>Create a project and place the Sublime Text Project file in your project's folder root</u>. Example: yourproject/project.sublime-project <strong>A Sublime Text Project File in the root of your project is necessary.</strong></p>
                             <p><strong><u>REMEMBER</u></strong> A config.rb file is created when save/build a SASS file, move the file to project root and edit to match the folders tree and set the "output_style" (:nested, :expanded, :compact, :compressed). More information at <a target="blank" href="http://compass-style.org/help/documentation/configuration-reference/">Compass documentation</a></p>
                         </li>
                         <li>
                             <p><strong><u>Emmet</u>:</strong> <a target="_blank" href="https://github.com/emmetio/sublime-text-plugin#emmet-2-for-sublime-text-editor">https://github.com/emmetio/sublime-text-plugin#emmet-2-for-sublime-text-editor</a></p>
-                            <a class="img-guide" href="assets/st3_emmet.png"><img src="assets/st3_emmet.png"></a>
+                            <a class="imgGuide" href="assets/st3_emmet.png"><img src="assets/st3_emmet.png"></a>
                             <p>Emmet is a plugin for many popular text editors which greatly improves HTML & CSS workflow. Read the <a target="blank" href="https://docs.emmet.io/cheat-sheet/">Cheat sheet</a> for use</p>
                         </li>
                         <li>
                             <p><strong><u>HTML-CSS-JS Prettify</u>:</strong> <a target="_blank" href="https://github.com/victorporof/Sublime-HTMLPrettify">https://github.com/victorporof/Sublime-HTMLPrettify</a></p>
                             <p>This is a Sublime Text 3 Plugin for reducing (Minify) or prettify (ident) the code size of HTML5, CSS3 and Javascript files.</p>
-                            <a class="img-guide" href="assets/st3_prettify.png"><img src="assets/st3_prettify.png"></a>
-                            <p>If you get an error about Node.js not being found or similar, you don't have node in the right path. Try setting the absolute path to node in HTMLPrettify.sublime-settings. To get absolute path type in command line <code>where node</code>
-                                <ul>
-                                    <li>Go to <strong>Preferences</strong> &gt <strong>Package settings</strong> &gt <strong>HTML-CSS-JS Prettify</strong> &gt <strong>Plugin options - User</strong></li>
-                                    <li>add <code>"node_path": { "windows": "C:/path/to/node.exe", },</code></li>
-                                </ul>
-                            </p>
-                            <p>SASS identation anod Linter cause warnings about identation, configure each SASS/SCSS file in 2 spaces and add next line:
-                                <ul>
-                                    <li>Go to <strong>Preferences</strong> &gt <strong>Package settings</strong> &gt <strong>HTML-CSS-JS Prettify</strong> &gt <strong>Plugin options - User</strong></li>
-                                    <li>add <code> "use_editor_indentation": true,</code></li>
-                                </ul>
-                            </p>
+                            <a class="imgGuide" href="assets/st3_prettify.png"><img src="assets/st3_prettify.png"></a>
                             <p><strong>Use:</strong>
-                                <ul>
-                                    <li>In order to minify code in current file press <strong>Shift + Alt + Ctrl + M</strong> . If you press <strong>Shift + Ctrl + M</strong> or click on the <strong>Tools</strong> menu and click <strong>Minify Current File</strong> a .min file be added onto the current directory where you are working. Alternatively, Right Click on the Editor area or the sidebar and click 'Minify HTML5 File'.</li>
-                                    <li>To Beautify code (ident, space, arrange, etc) use <strong>Shift + Ctrl + H</strong>.</li>
-                                </ul>
+                            <ul>
+                                <li>In order to minify code in current file press <strong>Shift + Alt + Ctrl + M</strong> . If you press <strong>Shift + Ctrl + M</strong> or click on the <strong>Tools</strong> menu and click <strong>Minify Current File</strong> a .min file be added onto the current directory where you are working. Alternatively, Right Click on the Editor area or the sidebar and click 'Minify HTML5 File'.</li>
+                                <li>To Beautify code (ident, space, arrange, etc) use <strong>Shift + Ctrl + H</strong>.</li>
+                            </ul>
+                            </p>
+                            <p>If you get an error about Node.js not being found or similar, you don't have node in the right path. Try setting the absolute path to node in HTMLPrettify.sublime-settings.
+                            <ul>
+                                <li>Press <strong>Ctrl + Shift + P</strong> to enter Command Palette</li>
+                                <li>Type <code>htmlprettify</code>, select <code>Set node Path</code></li>
+                            </ul>
                             </p>
                         </li>
                         <li>
                             <p><strong><u>Language - Spanish</u>:</strong> <a target="_blank" href="https://packagecontrol.io/packages/Language%20-%20Spanish">https://packagecontrol.io/packages/Language%20-%20Spanish</a></p>
                             <p>Add Spanish spelling languages to your Sublime Text editor. Based on dictionaries Spanish from titoBouzout and superbob.</p>
-                            <a class="img-guide" href="assets/st3_languageSpanish.png"><img src="assets/st3_languageSpanish.png"></a>
+                            <a class="imgGuide" href="assets/st3_languageSpanish.png"><img src="assets/st3_languageSpanish.png"></a>
                             <ol>
                                 <li>Install the package : “Language - Spanish”</li>
-                                <li>Choose the language (View &gt;; Dictionary &gt;; Language - Spanish &gt;; es_Es)</li>
-                                <li>Be sure spelling is activated (F6 / View &gt;; Spell Check)</li>
-                                <li>Verify/add on Sublime Text preferences (Preferences &gt; settings &gt; User File) the line: <code>"dictionary": "Packages/Language - Spanish/es_ES.dic",</code></li>
+                                <li>Choose the language (View &gt; Dictionary &gt; Language - Spanish &gt; es_Es)</li>
+                                <li>Be sure spelling is activated (F6 / View &gt; Spell Check)</li>
+                                <li>Verify/add on Sublime Text preferences (Preferences &gt settings &gt User File) the line: <code>"dictionary": "Packages/Language - Spanish/es_ES.dic",</code></li>
                             </ol>
                         </li>
                         <li>
                             <p><strong><u>LiveReload</u>:</strong> <a target="_blank" href="https://github.com/alepez/LiveReload-Sublime Text3">https://github.com/alepez/LiveReload-Sublime Text3</a></p>
                             <p>Enables reload page after compass SASS compilation and/or file saving.</p>
-                            <a class="img-guide" href="assets/st3_livereload.png"><img src="assets/st3_livereload.png"></a>
+                            <a class="imgGuide" href="assets/st3_livereload.png"><img src="assets/st3_livereload.png"></a>
                             <ol>
                                 <li>Install From Package Control</li>
                                 <li>Open Google Chrome, search and install liveReload extension <a target="_blank" href="https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei">here</a></li>
-                                <li>To use it with local files, be sure to enable “Allow access to file URLs” checkbox in Tools &gt; Extensions &gt; LiveReload after installation in Google Chrome.</li>
+                                <li>To use it with local files, be sure to enable “Allow access to file URLs” checkbox in Tools &gt Extensions &gt LiveReload after installation in Google Chrome.</li>
                                 <li>Open FireFox, search and install liveReload extension <a target="_blank" href="https://addons.mozilla.org/es/firefox/addon/livereload-web-extension/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search">here</a>.</li>
                                 <li>Open sublime text an edit:<br />
                                     Preferences -> package settings -> LiveReload -> Settings - User<br />
@@ -232,66 +225,59 @@
                                     *The "enabled_plugins" names are the .py filename of each plugin
                                 </li>
                             </ol>
-                            <p>To activate (if not runing) goto <strong>Preferences &gt; package settings &gt; LiveReload &gt; plugin-ins enable/disable</strong>. Then select Enable/Disable 400ms an activate from navigator the extension clicking</p>
+                            <p>To activate (if not runing) goto <strong>Preferences &gt package settings &gt LiveReload &gt plugin-ins enable/disable</strong>. Then select Enable/Disable 400ms an activate from navigator the extension clicking</p>
                         </li>
                         <li>
                             <p><strong><u>Minify</u>:</strong> <a target="_blank" href="https://packagecontrol.io/packages/Minify">https://packagecontrol.io/packages/Minify</a></p>
                             <p>Minify the code (like HTML-CSS-JS Prettify) and create a new file pressing <strong>Ctrl + Alt + M</strong>, but uses another sintax in js-breatify probably minifying code better than others</p>
-                            <a class="img-guide" href="assets/st3_minify.png"><img src="assets/st3_minify.png"></a>
-                            <p>To best perform change/add the next lines in minify user settings: <strong>Preferences &gt; Package settings &gt; Minify &gt; Settings - User</strong></p>
+                            <a class="imgGuide" href="assets/st3_minify.png"><img src="assets/st3_minify.png"></a>
+                            <p>To best perform change/add the next lines in minify user settings: <strong>Preferences &gt Package settings &gt Minify &gt Settings - User</strong></p>
                             <code>"html-minifier_options": "--collapse-boolean-attributes --collapse-whitespace --html5 --minify-css --minify-js --process-conditional-comments --remove-comments --remove-empty-attributes --remove-redundant-attributes --remove-script-type-attributes --remove-style-link-type-attributes --quote-character '",</code>
                             <p>* Force to remove line breaks on .html code</p>
                         </li>
                         <li>
                             <p><strong><u>Powershell</u>:</strong> <a target="_blank" href="https://packagecontrol.io/packages/PowerShell">https://packagecontrol.io/packages/PowerShell</a></p>
                             <p>Adds support for the MS PowerShell programming language syntax.</p>
-                            <a class="img-guide" href="assets/st3_powershell.png"><img src="assets/st3_powershell.png"></a>
+                            <a class="imgGuide" href="assets/st3_powershell.png"><img src="assets/st3_powershell.png"></a>
                         </li>
                         <li>
                             <p><strong><u>SASS</u>:</strong> <a target="_blank" href="https://packagecontrol.io/packages/Sass">https://packagecontrol.io/packages/Sass</a></p>
                             <p>Includes completions for CSS properties and values, as well as relevant Sass functions. Highlights code using up to date specifications for properties and values to help you catch typos. Syntax highlighting should be very similar to CSS and LESS (which is maintained in parallel).</p>
-                            <a class="img-guide" href="assets/st3_Sass.png"><img src="assets/st3_Sass.png"></a>
+                            <a class="imgGuide" href="assets/st3_Sass.png"><img src="assets/st3_Sass.png"></a>
                         </li>
                         <li>
                             <p><strong><u>Sidebar Enhancements</u>:</strong> <a target="_blank" href="https://packagecontrol.io/packages/SideBarEnhancements">https://packagecontrol.io/packages/SideBarEnhancements</a></p>
                             <p>Provides enhancements to the operations on Sidebar of Files and Folders for Sublime Text.</p>
                         </li>
-                        <li><!-- Start of Sublime Text linter package -->
+                        <li>
                             <p><strong><u>SublimeLinter</u>:</strong> <a target="_blank" href="http://www.sublimelinter.com">http://www.sublimelinter.com</a></p>
                             <p>Welcome to SublimeLinter, a linter framework for Sublime Text 3. Linters are not included, they must be installed via Package Control.</p>
-                            <p>Next are the basic linters for CSS, SASS, SCSS, ¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿????????HTML¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿????????, JavaScript, JSON and PHP.</p>
+                            <p>Next are the basic linters for CSS, SASS, SCSS, HTML, JavaScript, JSON and PHP.</p>
                             <ul>
                                 <li>
-                                    <p><code class="oneline">sublimelinter-csslint</code>Requires: <a target="_blank" href="https://github.com/SublimeLinter/SublimeLinter-csslint">csslint</a> <code>npm install -g csslint</code></p>
+                                    <p><code class="oneline">sublimelinter-contrib-htmllint</code>Requires: <a target="_blank" href="https://github.com/necramirez/SublimeLinter-contrib-htmllint">htmllint</a> <code>npm install -g htmllint-cli</code><code class="oneline">htmllint init</code> - Run from console to activate htmllint</p>
                                 </li>
-                                <li>
-                                    <p><code class="oneline">sublimelinter-jshint</code>Requires: <a target="_blank" href="https://github.com/SublimeLinter/SublimeLinter-jshint">jshint</a> <code>npm install -g jshint</code></p>
-                                </li>
-                                <li>
-                                    <p><code class="oneline">sublimelinter-json</code> if you want a strict use of linter (not allow comments after coma or end files) add next code to <strong>Preferences</strong> &gt <strong>Package settings</strong> &gt <strong>SublimeLinter</strong> &gt <strong>Settings</strong> <code class="oneline">"linters": {"json": {"strict": true},}</code></p>
-                                </li>
-                                <li>
-                                    <p><code class="oneline">sublimelinter-contrib-sass-lint</code>Requires: <a target="_blank" href="https://github.com/skovhus/SublimeLinter-contrib-sass-lint">sass-lint</a> <code>npm install -g sass-lint</code>to set ident spaces to 4 add next code to <strong>Preferences</strong> &gt <strong>Package settings</strong> &gt <strong>SublimeLinter</strong> &gt <strong>Settings</strong> <code class="oneline">"linters": { "sass-lint": { "rules": {"indentation": [4, {"size": 4}]}},}</code></p>
-                                </li>
+                                <li>sublimelinter-csslint</li>
+                                <li>sublimelinter-jshint</li>
+                                <li>sublimelinter-json</li>
+                                <li>sublimelinter-contrib-sass-lint</li>
                                 <li>sublimelinter-phplint</li>
-                                <li>SublimeLinter-php</li>
-                                <code class="oneline">Tryed: sublimelinter-contrib-htmllint - https://github.com/necramirez/SublimeLinter-contrib-htmllint</code>
                             </ul>
                         </li><!-- End of Sublime Text linter package -->
                         <li>
                             <p><strong><u>SublimeOnSaveBuild</u>:</strong> <a target="_blank" href="https://github.com/alexnj/SublimeOnSaveBuild">https://github.com/alexnj/SublimeOnSaveBuild</a></p>
                             <p>This is a simple plugin for Sublime Text to trigger a build on each save.</p>
-                            <a class="img-guide" href="assets/st3_sublimeOnSaveBuild.jpg"><img src="assets/st3_sublimeOnSaveBuild.jpg"></a>
+                            <a class="imgGuide" href="assets/st3_sublimeOnSaveBuild.jpg"><img src="assets/st3_sublimeOnSaveBuild.jpg"></a>
                             <p><strong>Tips:</strong></p>
                             <ul>
                                 <li>
-                                    <p>Create a JavaScript Build for Sublime Text on <strong>Tools</strong> &gt; <strong>Build System</strong> &gt; <strong>New Buld System</strong> with this code:</p>
+                                    <p>Create a JavaScript Build for Sublime Text on <strong>Tools</strong> &gt <strong>Build System</strong> &gt <strong>New Buld System</strong> with this code:</p>
                                     <code>{ "cmd": ["C:/Program Files/nodejs/node.exe", "$file"], "selector": "source.js" }</code>
                                     <p>*Take care about the nodejs path using <code>where node</code> from command line</p>
                                     <p>and save to <code>%AppData%\Sublime Text 3\Packages\User\JavaScript.sublime-build</code></p>
                                 </li>
-                                <li>Set <strong>Tools</strong> &gt; <strong>Build System</strong> &gt; <strong> Atomatic</strong> To choose the file type build on first save on file.</li>
-                                <li>To activate on every save go to <strong>Preferences</strong> &gt; <strong>Package settings</strong> &gt; <strong>SublimeOnSaveBuild</strong> &gt; <strong>Preferences</strong> &gt; <strong>Settings - User</strong> and insert this code: <code>{"build_on_save": 1}</code></li>
+                                <li>Set <strong>Tools</strong> &gt <strong>Build System</strong> &gt <strong> Atomatic</strong> To choose the file type build on first save on file.</li>
+                                <li>To activate on every save go to <strong>Preferences</strong> &gt <strong>Package settings</strong> &gt <strong>SublimeOnSaveBuild</strong> &gt <strong>Preferences</strong> &gt <strong>Settings - User</strong> and insert this code: <code>{"build_on_save": 1}</code></li>
                             </ul>
                         </li>
                     </ul>
