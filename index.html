@@ -120,7 +120,7 @@
                     <p>To set Ubuntu as default terminal:</p>
                     <ol>
                         <li>Click to down triangle in tittle bar, and choose Settings or press <strong>Ctrl</strong> + <strong>,</strong></li>
-                        <li>Search Linux distribution name in file's &gt profile &gt list an copy the GUID (for Ubuntu 20.02LTS is like 07b52e3e-de2c-5db4-bd2d-ba144ed6c273)</li>
+                        <li>Search Linux distribution name in file's &gt; profile &gt; list an copy the GUID (for Ubuntu 20.02LTS is like 07b52e3e-de2c-5db4-bd2d-ba144ed6c273)</li>
                         <li>Replace the GUID of Ubuntu in default profile to: <code>"defaultProfile": "{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}",</code></li>
                         <a class="img-guide" href="assets/wt_UbuntuDefault.png"><img src="assets/wt_UbuntuDefault.png"></a>
                     </ol>
@@ -130,8 +130,8 @@
                         <p>** Verify and uninstall if "Mysql installer - Communuty" is installed, <u>not use the web version</u> of the installer
                     </strong></p>
                 </li>
-                <li><a target="_blank" href="https://git-scm.com/download/win">Git</a>
-                    <div class="logo inline"><img class="git" src="assets/gitLogo.svg" /></div> - Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.
+                <li><a target="_blank" href="https://git-scm.com/download/win">Git (GitBash)</a>
+                    <div class="logo inline"><img class="git" src="assets/gitBashLogo.svg" /></div> - Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.
                 </li>
                 <li><a target="_blank" href="https://www.sourcetreeapp.com/">Sourcetree</a>
                     <div class="logo inline"><img class="sourcetree" src="assets/sourcetreeLogo.svg" /></div> - Sourcetree simplifies how you interact with your Git repositories so you can focus on coding. Visualize and manage your repositories through Sourcetree's simple Git GUI.
@@ -147,6 +147,7 @@
                         <li>httpd.conf - for DocumentRoot, the directory out of which you will serve your documents.</li>
                         <li>config.inc.php - Change the mysql/mariaDB login to <code>$cfg['Servers'][$i]['auth_type'] = 'cookie';</code> to request DB server user and password</li>
                         <li>Create localhost certificate. <a target="_blank" href="downloads/cert_localhost.cmd" download>A CommandLine script can downloaded here</a>.</li>
+                        <li>If you want add PHP to your system path, use PowerShell with administrator privileges, paste this code where <strong>"&ltc:\path\to\php_folder&gt;"</strong> is the folder of php.exe: <code class="oneline">Set-ItemProperty -Path 'Registry::HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Environment' -Name PATH -Value ((Get-ItemProperty -Path 'Registry::HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Environment' -Name PATH).path + ";&ltc:\path\to\php_folder&gt;");</code></p></li>
                     </ol>
                 </li>
             </ol>
@@ -155,7 +156,13 @@
             <h3>Code/text Editors</h3>
             <ol>
                 <li>
-                    <h4>Sublime Text - Download From: <a target="_blank" href="https://www.sublimetext.com/3">https://www.sublimetext.com/3</a></h4>
+                    <h4><div class="logo inline"><img class="mysql" src="assets/sublimeTextLogo.svg" /></div>Sublime Text - Download From: <a target="_blank" href="https://www.sublimetext.com/3">https://www.sublimetext.com/3</a></h4>
+                    <p>Fixes:</p>
+                    <ul>
+                        <li>Add sublime Text Icon to "Open with Sublime Text" context menu option using PowerShell with administrative rights
+                            <code class="oneline">Set-ItemProperty -Path 'Registry::HKEY_CLASSES_ROOT\`*\shell\Open with Sublime Text' -Name Icon -Value "C:\Program Files\Sublime Text 3\sublime_text.exe"</code>
+                        </li>
+                    </ul>
                     <p>Packages to install:</p>
                     <ul>
                         <li>
@@ -196,7 +203,7 @@
                                 "match_brackets_content": false,<br />
                                 "match_brackets_square": false,<br />
                                 "match_tags": false</code>
-                            <p>BracketHighlighter matches a variety of brackets such as: <code>[]</code>, <code>()</code>, <code>{}</code>, <code>""</code>, <code>''</code>, <code class="highlight"><span class="nt">&lt;;tag&gt;;&lt;;/tag&gt;;</span></code>, and even custom brackets.</p>
+                            <p>BracketHighlighter matches a variety of brackets such as: <code>[]</code>, <code>()</code>, <code>{}</code>, <code>""</code>, <code>''</code>, <code class="highlight"><span class="nt">&lt;tag&gt;;&lt;/tag&gt;;</span></code>, and even custom brackets.</p>
                             <p>This was originally forked from pyparadigm's <em>SublimeBrackets</em> and <em>SublimeTagmatcher</em> (both are no longer available). I forked his repositories to fix a number issues I add some features I had wanted. I also wanted to improve the efficiency of the matching. Moving forward, I have thrown away all of the code and have completely rewritten the entire code base to allow for more flexibility, faster matching, and a more feature rich experience.</p>
                         </li>
                         <li>
@@ -216,13 +223,13 @@
                             <a class="img-guide" href="assets/st3_prettify.png"><img src="assets/st3_prettify.png"></a>
                             <p>If you get an error about Node.js not being found or similar, you don't have node in the right path. Try setting the absolute path to node in HTMLPrettify.sublime-settings. To get absolute path type in command line <code>where node</code>
                                 <ul>
-                                    <li>Go to <strong>Preferences</strong> &gt <strong>Package settings</strong> &gt <strong>HTML-CSS-JS Prettify</strong> &gt <strong>Plugin options - User</strong></li>
+                                    <li>Go to <strong>Preferences</strong> &gt; <strong>Package settings</strong> &gt; <strong>HTML-CSS-JS Prettify</strong> &gt; <strong>Plugin options - User</strong></li>
                                     <li>add <code>"node_path": { "windows": "C:/path/to/node.exe", },</code></li>
                                 </ul>
                             </p>
                             <p>SASS identation anod Linter cause warnings about identation, configure each SASS/SCSS file in 2 spaces and add next line:
                                 <ul>
-                                    <li>Go to <strong>Preferences</strong> &gt <strong>Package settings</strong> &gt <strong>HTML-CSS-JS Prettify</strong> &gt <strong>Plugin options - User</strong></li>
+                                    <li>Go to <strong>Preferences</strong> &gt; <strong>Package settings</strong> &gt; <strong>HTML-CSS-JS Prettify</strong> &gt; <strong>Plugin options - User</strong></li>
                                     <li>add <code> "use_editor_indentation": true,</code></li>
                                 </ul>
                             </p>
@@ -288,23 +295,23 @@
                             <!-- Start of Sublime Text linter package -->
                             <p><strong><u>SublimeLinter</u>:</strong> <a target="_blank" href="http://www.sublimelinter.com">http://www.sublimelinter.com</a></p>
                             <p>Welcome to SublimeLinter, a linter framework for Sublime Text 3. Linters are not included, they must be installed via Package Control.</p>
-                            <p>Next are the basic linters for CSS, SASS, SCSS, ¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿????????HTML¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿????????, JavaScript, JSON and PHP.</p>
+                            <p>Next are the basic linters for CSS, SASS, SCSS, JavaScript, JSON and PHP.</p>
                             <ul>
                                 <li>
-                                    <p><code class="oneline">sublimelinter-csslint</code>Requires: <a target="_blank" href="https://github.com/SublimeLinter/SublimeLinter-csslint">csslint</a> <code>npm install -g csslint</code></p>
+                                    <p>Package name: <code class="oneline">sublimelinter-csslint</code>Requires: <a target="_blank" href="https://github.com/SublimeLinter/SublimeLinter-csslint">csslint</a> <code>npm install -g csslint</code></p>
                                 </li>
                                 <li>
-                                    <p><code class="oneline">sublimelinter-jshint</code>Requires: <a target="_blank" href="https://github.com/SublimeLinter/SublimeLinter-jshint">jshint</a> <code>npm install -g jshint</code></p>
+                                    <p>Package name: <code class="oneline">sublimelinter-jshint</code>Requires: <a target="_blank" href="https://github.com/SublimeLinter/SublimeLinter-jshint">jshint</a> <code>npm install -g jshint</code></p>
                                 </li>
                                 <li>
-                                    <p><code class="oneline">sublimelinter-json</code> if you want a strict use of linter (not allow comments after coma or end files) add next code to <strong>Preferences</strong> &gt <strong>Package settings</strong> &gt <strong>SublimeLinter</strong> &gt <strong>Settings</strong> <code class="oneline">"linters": {"json": {"strict": true},}</code></p>
+                                    <p>Package name: <code class="oneline">sublimelinter-json</code> if you want a strict use of linter (not allow comments after coma or end files) add next code to <strong>Preferences</strong> &gt; <strong>Package settings</strong> &gt; <strong>SublimeLinter</strong> &gt; <strong>Settings</strong> <code class="oneline">"linters": {"json": {"strict": true},}</code></p>
                                 </li>
                                 <li>
-                                    <p><code class="oneline">sublimelinter-contrib-sass-lint</code>Requires: <a target="_blank" href="https://github.com/skovhus/SublimeLinter-contrib-sass-lint">sass-lint</a> <code>npm install -g sass-lint</code>to set ident spaces to 4 add next code to <strong>Preferences</strong> &gt <strong>Package settings</strong> &gt <strong>SublimeLinter</strong> &gt <strong>Settings</strong> <code class="oneline">"linters": { "sass-lint": { "rules": {"indentation": [4, {"size": 4}]}},}</code></p>
+                                    <p>Package name: <code class="oneline">sublimelinter-contrib-sass-lint</code>Requires: <a target="_blank" href="https://github.com/skovhus/SublimeLinter-contrib-sass-lint">sass-lint</a> <code>npm install -g sass-lint</code>to set ident spaces to 4 add next code to <strong>Preferences</strong> &gt; <strong>Package settings</strong> &gt; <strong>SublimeLinter</strong> &gt; <strong>Settings</strong> <code class="oneline">"linters": { "sass-lint": { "rules": {"indentation": [2, {"size": 4}]}},}</code></p>
                                 </li>
-                                <li>sublimelinter-phplint</li>
-                                <li>SublimeLinter-php</li>
-                                <code class="oneline">Tryed: sublimelinter-contrib-htmllint - https://github.com/necramirez/SublimeLinter-contrib-htmllint</code>
+                                <li>
+                                    <p>Package name: <code class="oneline">sublimelinter-php</code>Requires: <a target="_blank" href="https://github.com/SublimeLinter/SublimeLinter-php">PHP</a> The path to php.exe is required to linter PHP code, go to <strong>Preferences</strong> &gt; <strong>Package settings</strong> &gt; <strong>SublimeLinter</strong> &gt; <strong>Settings</strong> an add at same level of "linters:"{} <code class="oneline"> "paths": { "windows": ["&ltc:/path/to/php_folder&gt;",]},</code></p>
+                                </li>
                             </ul>
                         </li><!-- End of Sublime Text linter package -->
                         <li>
@@ -316,7 +323,7 @@
                                 <li>
                                     <p>Create a JavaScript Build for Sublime Text on <strong>Tools</strong> &gt; <strong>Build System</strong> &gt; <strong>New Buld System</strong> with this code:</p>
                                     <code>{ "cmd": ["C:/Program Files/nodejs/node.exe", "$file"], "selector": "source.js" }</code>
-                                    <p>*Take care about the nodejs path using <code>where node</code> from command line</p>
+                                    <p>*To find nodejs path use <code>where node</code> from command line</p>
                                     <p>and save to <code>%AppData%\Sublime Text 3\Packages\User\JavaScript.sublime-build</code></p>
                                 </li>
                                 <li>Set <strong>Tools</strong> &gt; <strong>Build System</strong> &gt; <strong> Atomatic</strong> To choose the file type build on first save on file.</li>
