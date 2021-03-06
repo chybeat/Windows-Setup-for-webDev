@@ -1,0 +1,24 @@
+v1. Información y diseño básico
+Mostrar los pasos, comandos y enlaces de descarga de las aplicaciones  y plugins para dejar el computador en ejecución correcta para desarrollo web,
+suficiente para aprender y realizar trabajos desde local.
+No para servidores
+
+v2. Mejorar el diseño por completo
+Hacer que el diseño sea ameno y responsivo
+
+v3. DB y PHP
+Luego de pasar toda la info a DB, se pueda hacer actualización de datos (enlaces de descarga y demás) y mostrar los enlaces de versiones anteriores para tdos los programas posibles
+Verificar cómo utilizar llamados a la DB para realizar un ps1 progresivo
+Incluir un método para descargar un archivo .ps1 que haga todo el proceso automatizado - (Verificar problemas para resolucón de errores)
+
+v4. Incluir javascript
+De algún modo utilizarlo, sobretodo para mejorar el diseño y la intereacción.
+Hacer el llamado de descarga del .ps1 por medio de javascript haciendo llamado a la DB de los comandos powershell necesarios (tanto textos como comandos)
+Hacer que las imagenes se vean en la misma pagina (visor de imagenes).
+
+v6. 
+
+v?. Servidores??
+
+
+TV 885 850 284
