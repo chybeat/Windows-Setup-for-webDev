@@ -17,18 +17,78 @@
     </header>
     <section id="programs">
         <h2>Programs</h2>
-        <p>A set of programs to set Windows PC to Web Develpment</p>
+        <p>A set of programs to set Windows PC to Web Development</p>
         <article id="webBrowsers">
             <h3>Web Browsers</h3>
-            <p>Recomended browsers for web development</p>
+            <p>Recommended browsers for web development</p>
             <ol>
                 <li><a target="_blank" href="https://www.google.com/intl/es-419/chrome/dev/">Google Chrome Dev<div class="logo inline"><img class="chrome" src="assets/chromeDevLogo.svg"></div></a></li>
                 <li><a href="https://download.mozilla.org/?product=firefox-devedition-stub&os=win&lang=es-ES">Firefox Developer Edition (Direct Download)<div class="logo inline"><img class="firefox" src="assets/firefoxDevLogo.svg"></div></a></li>
             </ol>
         </article>
         <article>
+            <h3>Windows Subsystem for Linux 2 (WSL2)</h3>
+            <p>The WSL2 requires <u>Windows 10 1903+ with Build 18362.1049+ or 18363.1049+ in 64-bit version</u> (WSL Kernel Update can't be updated in 32-Bit version)</p>
+            <p>You can see actual version and build pressing<strong>Win + R</strong>, then write <strong>winver</strong> and press <strong>Enter</strong>.</p>
+            <ol>
+                <li>
+                    <p>Activate Windows Subsystem for Linux. Run command from PowerShell with administrative rights. <code class="oneline">dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart</code></p>
+                </li>
+                <li>
+                    <p>Activate the Virtual Machine Platform. May need to enable this CPU option in BIOS. Run command from PowerShell with administrative rights.<code class="oneline">dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart</code></p>
+                </li>
+                <li>
+                    <p>In windows 10 the "hypervisor launch type" is not configured to working WSL2, you can see the actual status with
+                        <code>bcdedit</code> (Run in terminal as administrator)
+                        if "hypervisorlaunchtype off" are displayed, then run:
+                        <code class="oneline">BCDEDIT /Set {current} hypervisorlaunchtype auto</code>(Run in terminal as administrator)
+                    </p>
+                </li>
+                <li>
+                    <p> <strong>&gt;&gt;&gt;&gt; At this point a computer restart is required. &lt;&lt;&lt;&lt; </strong></p>
+                </li>
+                <li>
+                    <p>Download from <a href="https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi">here</a> the <a target="_blank" href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">Windows Subsystem for Linux 2</a> kernel Update. Then install it.</p>
+                </li>
+                <li>
+                    <p>Run command from PowerShell with administrative rights.<code class="oneline">wsl --set-default-version 2</code></p>
+                </li>
+                <li>
+                    <p>Open the Microsoft Store and search your favorite Linux distribution or <a href="https://aka.ms/wslubuntu2004">download the Ubuntu 20.04 LTS</a> package. Then open downloaded file (Ubuntu_2004.2020.424.0_x64.appx) or run from PowerShell with administrative rights:</p>
+                    <code>Add-AppxPackage c:\path\to\Ubuntu_2004.2020.424.0_x64.appx</code>
+                </li>
+            </ol>
+            <p>If you want, a <a target="_blank" href="downloads/update_WSL2.ps1" download>PowerShell script</a> can be used to make these changes and downloads. Just type in PowerShell <code>& c:\path\to\update_WSL2.ps1</code>or right click on file and the click on "run with PowerShell". Administrative permissions ask when running</p>
+            <ul>
+                <h3>Linux commands</h3>
+                <li>Open Linux terminal to set user name and password.</li>
+                <li>
+                    <p>Change home (~) Directory:</p>
+                    <ol>
+                        <li>Run in terminal: <code>sudo vim /etc/passwd</code></li>
+                        <li>Search for username:x:1000:1000:"",,,:/home/&lt;username&gt;:/bin/bash</li>
+                        <li>then change <strong>/home/&lt;username&gt;</strong> for <strong>/mnt/d</strong> or wanted folder</li>
+                        <li>Save file and exit from vim pressing <stromg>Esc</stromg> and writing <code>:wq</code>, press <strong>Enter</strong>.</li>
+                        <li>Exit from terminal with <code>logout</code></li>
+                        <li>To verify Enter again to terminal anb writing <code>cd ~</code> and press <strong>Enter</strong></li>
+                        <li>Then write <code>pwd</code>and press <strong>Enter</strong></li>
+                        <li>Verify the folder showing are the selected. in ths example: <code>/mnt/d</code></li>
+                    </ol>
+                </li>
+                <li>Run <code>sudo apt update</code> to retrieve the list of latest updates</li>
+                <li>Run <code>sudo apt upgrade</code> to upgrade Linux to the latest version.</li>
+                <li>Run <code>sudo apt install nodejs</code> to install node.js</li>
+                <li>Run <code>sudo apt install npm</code> to install Node Package Manager</li>
+                <li>Run <code>sudo npm install -g clean-css-cli uglifycss js-beautify html-minifier uglify-js minjson svgo</code> to install uglify, minify, beautify packages for .css .html and .js files using HTML-CSS-JS Prettify for Sublime Text</li>
+                <li>Run <code>git --version</code> to verify git installed version. Compare with the <a target="_blank" href="https://git-scm.com/downloads">git download webage</a></li>
+                <li>Run <code>sudo apt install ruby-full</code> to install Ruby on rails</li>
+                <li>Run <code>sudo gem install sass</code> to install SASS preprocessor</li>
+                <li>Run <code>sudo gem install compass</code> to install compass preprocessor</span></li>
+            </ul>
+        </article>
+        <article>
             <h3>Required utilities</h3>
-            <p>Programs required/support plugins or extension</p>
+            <p>Programs required/support plug-ins or extension</p>
             <ol>
                 <li><a target="_blank" href="https://nodejs.org/en/download/">Node.js<div class="logo inline"><img class="nodejs" src="assets/nodejsLogo.svg"></div></a> - Node.js® A JavaScript software environment build with Chrome JavaScript V8 engine.
                     <ol type="a">
@@ -56,72 +116,22 @@
                     </ol>
                 </li>
                 <li>
-                    <a href="ms-windows-store://pdp/?ProductId=9N0DX20HK701">Windows terminal (from Microsoft Store) <div class="logo inline"><img class="windowsTerminal" src="assets/windowsTerminalLogo.svg" /></div></a> - Windows Terminal is a new, modern, feature-rich, productive terminal application for command-line users. It includes many of the features most frequently requested by the Windows command-line community including support for tabs, rich text, globalization, configurability, theming & styling, and more.
-                </li>
-                <li><a target="_blank" href="https://www.heidisql.com/download.php">Heidy Sql<div class="logo inline"><img class="heidySql" src="assets/heidySqlLogo.svg" /></div></a> - HeidiSQL is free software lets you see and edit data and structures from computers running one of the database systems MariaDB, MySQL, Microsoft SQL, PostgreSQL and SQLite.</li>
-                <li><a target="_blank" href="https://dev.mysql.com/downloads/windows/installer/8.0.html">Mysql Comunity<div class="logo inline"><img class="mysql" src="assets/mysqlLogo.svg" /></div></a> - MySQL Community Edition is a RDBMS freely downloadable version of the world's most popular open source database based on SQL – Structured Query Language.</li>
-                <li>¿Sourcetree? https://www.sourcetreeapp.com/</li>
-            </ol>
-        </article>
-        <article>
-            <h3>Windows Subsystem for Linux 2 (WSL2)</h3>
-            <p>The WSL2 requires <u>Windows 10 1903+ with Build 18362.1049+ or 18363.1049+ in 64-bit versión</u> (WSL Kernel Update can't be updated in 32-Bit version)</p>
-            <p>You can see actual version and build pressing<strong>Win + R</strong>, then write <strong>winver</strong> and press <strong>Enter</strong>.</p>
-            <ol>
-                <li>
-                    <p>Activate Windows Susbsystem for linux. Run command from Powershell with administrative rights. <code class="oneline">dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart</code></p>
-                </li>
-                <li>
-                    <p>Activate the Virtual Machine Platform. May need to enable this CPU option in BIOS. Run command from Powershell with administrative rights.<code class="oneline">dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart</code></p>
-                </li>
-                <li>
-                    <p>In windows 10 the "hypervisor launch type" is not configured to working WSL2, you can see the actual status with
-                        <code>bcdedit</code> (Run in terminal as administrator)
-                        if "hypervisorlaunchtype off" are displayed, then run:
-                        <code class="oneline">BCDEDIT /Set {current} hypervisorlaunchtype auto</code>(Run in terminal as administrator)
-                    </p>
-                </li>
-                <li>
-                    <p> <strong>&gt;&gt;&gt;&gt; At this point a computer restart is required. &lt;&lt;&lt;&lt; </strong></p>
-                </li>
-                <li>
-                    <p>Download from <a href="https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi">here</a> the <a target="_blank" href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">Windows Subsystem for Linux 2</a> kernel Update. Then install it.</p>
-                </li>
-                <li>
-                    <p>Run command from Powershell with administrative rights.<code class="oneline">wsl --set-default-version 2</code></p>
-                </li>
-                <li>
-                    <p>Open the Microsoft Store and search your favorite Linux distribution or <a href="https://aka.ms/wslubuntu2004">download the Ubuntu 20.04 LTS</a> package. Then open downloaded file (Ubuntu_2004.2020.424.0_x64.appx) or run from Powershell with administrative rights:</p>
-                    <code>Add-AppxPackage c:\path\to\Ubuntu_2004.2020.424.0_x64.appx</code>
-                </li>
-            </ol>
-            <p>If you want, a <a target="_blank" href="downloads/update_WSL2.ps1" download>powershell script</a> can be downloaded to make these changes and downloads. Just run with poweshell <code>& update_WSL2.ps1</code>or right click on file and the click on "run with Powershell". Administrative permissions asked when runing</p>
-            <ul>
-                <h3>Linux commands</h3>
-                <li>Open Linux terminal to set username and password.</li>
-                <li>
-                    <p>Change home (~) Directory:</p>
+                    <a href="ms-windows-store://pdp/?ProductId=9N0DX20HK701">Windows terminal (from Microsoft Store) <div class="logo inline"><img class="windowsTerminal" src="assets/windowsTerminalLogo.svg" /></div></a> - Windows Terminal is a new, modern, feature-rich, productive terminal application for command-line users. It includes many of the features most frequently requested by the Windows command-line community including support for tabs, rich text, theming & styling and more.
+                    <p>To set Ubuntu as default terminal:</p>
                     <ol>
-                        <li>Run in terminal: <code>sudo vim /etc/passwd</code></li>
-                        <li>Search for username:x:1000:1000:"",,,:/home/&lt;username&gt;:/bin/bash</li>
-                        <li>then change <strong>/home/&lt;username&gt;</strong> for <strong>/mnt/d</strong> or wanted folder</li>
-                        <li>Save file and exit from vim pressing <stromg>Esc</stromg> and writing <code>:wq</code>, press <strong>Enter</strong>.</li>
-                        <li>Exit from terminal with <code>logout</code></li>
-                        <li>To verify Enter again to terminal anb writing <code>cd ~</code> and press <strong>Enter</strong></li>
-                        <li>Then write <code>pwd</code>and press <strong>Enter</strong></li>
-                        <li>Verify the folder showing are the selected. in ths example: <code>/mnt/d</code></li>
+                        <li>Click to down triangle in tittle bar, and choose Settings or press <strong>Ctrl</strong> + <strong>,</strong></li>
+                        <li>Search Linux distribution name in file's &gt profile &gt list an copy the GUID (for Ubuntu 20.02LTS is like 07b52e3e-de2c-5db4-bd2d-ba144ed6c273)</li>
+                        <li>Replace the GUID of Ubuntu in default profile to: <code>"defaultProfile": "{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}",</code></li>
+                        <a class="img-guide" href="assets/wt_UbuntuDefault.png"><img src="assets/wt_UbuntuDefault.png"></a>
                     </ol>
                 </li>
-                <li>Run <code>sudo apt update</code> to retrive the list of lastest updates</li>
-                <li>Run <code>sudo apt upgrade</code> to upgrade Linux to the lastest version.</li>
-                <li>Run <code>sudo apt install nodejs</code> to install nodejs</li>
-                <li>Run <code>sudo apt install npm</code> to install Node Package Manager</li>
-                <li>Run <code>sudo npm install -g clean-css-cli uglifycss js-beautify html-minifier uglify-js minjson svgo</code> to install uglify, minify, beautify packages for .css .html and .js files</li>
-                <li>Run <code>git --version</code> to verify git installed version. Compare with the <a target="_blank" href="https://git-scm.com/downloads">git download webage</a></li>
-                <li>Run <code>sudo apt install ruby-full</code> to install Ruby on rails</li>
-                <li>Run <code>sudo gem install sass</code> to install SASS preprocessor</li>
-                <li>Run <code>sudo gem install compass</code> to install compass preprocessor</span></li>
-            </ul>
+                <li><a target="_blank" href="https://www.heidisql.com/download.php">Heidy Sql<div class="logo inline"><img class="heidySql" src="assets/heidySqlLogo.svg" /></div></a> - HeidiSQL is free software lets you see and edit data and structures from computers running one of the database systems MariaDB, MySQL, Microsoft SQL, PostgreSQL and SQLite.</li>
+                <li><a target="_blank" href="https://dev.mysql.com/downloads/windows/installer/8.0.html">Mysql Comunity<div class="logo inline"><img class="mysql" src="assets/mysqlLogo.svg" /></div></a> - MySQL Community Edition is a RDBMS freely downloadable version of the world's most popular open source database based on SQL – Structured Query Language.<strong>
+                    <p>** Verify and uninstall if "Mysql installer - Communuty" is installed, <u>not use the web version</u> of the installer</strong></p>
+                </li>
+                <li><a target="_blank" href="https://git-scm.com/download/win">Git</a><div class="logo inline"><img class="git" src="assets/gitLogo.svg" /></div> - Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.</li>
+                <li><a target="_blank" href="https://www.sourcetreeapp.com/">Sourcetree</a><div class="logo inline"><img class="sourcetree" src="assets/sourcetreeLogo.svg" /></div> - Sourcetree simplifies how you interact with your Git repositories so you can focus on coding. Visualize and manage your repositories through Sourcetree's simple Git GUI.</li>
+            </ol>
         </article>
         <article>
             <h3>Code/text Editors</h3>

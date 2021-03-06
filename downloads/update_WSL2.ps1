@@ -54,7 +54,7 @@ if($restarted -eq "0"){
 
     #ejecución del reinicio
     Start-Sleep -S 2
-#    Restart-Computer -force
+    Restart-Computer -force
     exit
 }else{
     Show-txt("`n`n`n`n`n`n`n`n`n`n`n`n`n`n`n`n`n`n`nContinación de activación de WSL2");
