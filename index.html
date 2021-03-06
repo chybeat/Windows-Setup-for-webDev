@@ -127,11 +127,28 @@
                 </li>
                 <li><a target="_blank" href="https://www.heidisql.com/download.php">Heidy Sql<div class="logo inline"><img class="heidySql" src="assets/heidySqlLogo.svg" /></div></a> - HeidiSQL is free software lets you see and edit data and structures from computers running one of the database systems MariaDB, MySQL, Microsoft SQL, PostgreSQL and SQLite.</li>
                 <li><a target="_blank" href="https://dev.mysql.com/downloads/windows/installer/8.0.html">Mysql Comunity<div class="logo inline"><img class="mysql" src="assets/mysqlLogo.svg" /></div></a> - MySQL Community Edition is a RDBMS freely downloadable version of the world's most popular open source database based on SQL – Structured Query Language.<strong>
-                    <p>** Verify and uninstall if "Mysql installer - Communuty" is installed, <u>not use the web version</u> of the installer</strong></p>
+                        <p>** Verify and uninstall if "Mysql installer - Communuty" is installed, <u>not use the web version</u> of the installer
+                    </strong></p>
                 </li>
-                <li><a target="_blank" href="https://git-scm.com/download/win">Git</a><div class="logo inline"><img class="git" src="assets/gitLogo.svg" /></div> - Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.</li>
-                <li><a target="_blank" href="https://www.sourcetreeapp.com/">Sourcetree</a><div class="logo inline"><img class="sourcetree" src="assets/sourcetreeLogo.svg" /></div> - Sourcetree simplifies how you interact with your Git repositories so you can focus on coding. Visualize and manage your repositories through Sourcetree's simple Git GUI.</li>
-                <li><a target="_blank" href="https://desktop.github.com/">GitHub Desktop</a><div class="logo inline"><img class="githubDesktop" src="assets/githubDesktopLogo.svg" /></div> - Focus on what matters instead of fighting with Git. Whether you're new to Git or a seasoned user, GitHub Desktop simplifies your development work flow.</li>
+                <li><a target="_blank" href="https://git-scm.com/download/win">Git</a>
+                    <div class="logo inline"><img class="git" src="assets/gitLogo.svg" /></div> - Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.
+                </li>
+                <li><a target="_blank" href="https://www.sourcetreeapp.com/">Sourcetree</a>
+                    <div class="logo inline"><img class="sourcetree" src="assets/sourcetreeLogo.svg" /></div> - Sourcetree simplifies how you interact with your Git repositories so you can focus on coding. Visualize and manage your repositories through Sourcetree's simple Git GUI.
+                </li>
+                <li>
+                    <a target="_blank" href="https://desktop.github.com/">GitHub Desktop</a>
+                    <div class="logo inline">
+                        <img class="githubDesktop" src="assets/githubDesktopLogo.svg" /></div> - Focus on what matters instead of fighting with Git. Whether you're new to Git or a seasoned user, GitHub Desktop simplifies your development work flow.
+                </li>
+                <li><a target="_blank" href="https://www.apachefriends.org/es/index.html">XAMPP</a><div class="logo inline"><img class="xampp" src="assets/xamppLogo.svg" /></div> - XAMPP is a completely free, easy to install Apache distribution containing MariaDB, PHP, and Perl. The XAMPP open source package has been set up to be incredibly easy to install and to use.  <strong><u>Warning</u>: Use XAMPP only for development environment)</strong>
+                    <ol>
+                        Remember to configure:
+                        <li>httpd.conf - for DocumentRoot, the directory out of which you will serve your documents.</li>
+                        <li>config.inc.php - Change the mysql/mariaDB login to <code>$cfg['Servers'][$i]['auth_type'] = 'cookie';</code> to request DB server user and password</li>
+                        <li>Create localhost certificate. <a target="_blank" href="downloads/cert_localhost.cmd" download>A CommandLine script can downloaded here</a>.</li>
+                    </ol>
+                </li>
             </ol>
         </article>
         <article>
@@ -267,7 +284,8 @@
                             <p><strong><u>Sidebar Enhancements</u>:</strong> <a target="_blank" href="https://packagecontrol.io/packages/SideBarEnhancements">https://packagecontrol.io/packages/SideBarEnhancements</a></p>
                             <p>Provides enhancements to the operations on Sidebar of Files and Folders for Sublime Text.</p>
                         </li>
-                        <li><!-- Start of Sublime Text linter package -->
+                        <li>
+                            <!-- Start of Sublime Text linter package -->
                             <p><strong><u>SublimeLinter</u>:</strong> <a target="_blank" href="http://www.sublimelinter.com">http://www.sublimelinter.com</a></p>
                             <p>Welcome to SublimeLinter, a linter framework for Sublime Text 3. Linters are not included, they must be installed via Package Control.</p>
                             <p>Next are the basic linters for CSS, SASS, SCSS, ¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿????????HTML¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿????????, JavaScript, JSON and PHP.</p>

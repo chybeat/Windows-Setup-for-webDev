@@ -10,6 +10,7 @@ v3. DB y PHP
 Luego de pasar toda la info a DB, se pueda hacer actualización de datos (enlaces de descarga y demás) y mostrar los enlaces de versiones anteriores para tdos los programas posibles
 Verificar cómo utilizar llamados a la DB para realizar un ps1 progresivo
 Incluir un método para descargar un archivo .ps1 que haga todo el proceso automatizado - (Verificar problemas para resolucón de errores)
+Inclui un metodo para agregar los certificados SSL para localhost y por proyecto.
 
 v4. Incluir javascript
 De algún modo utilizarlo, sobretodo para mejorar el diseño y la intereacción.
