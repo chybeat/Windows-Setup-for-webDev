@@ -28,3 +28,4 @@ v?. Servidores??
 * Instructions to create a SSH from git/gitbash
 	- Evaluate put instructions to github upload of SSH public key
 * Compass and ruby sass deprecated, use dart sass
+* Set a padding for body.

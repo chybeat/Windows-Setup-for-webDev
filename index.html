@@ -29,13 +29,13 @@
         <article>
             <h3>Windows Subsystem for Linux 2 (WSL2)</h3>
             <p>The WSL2 requires <u>Windows 10 1903+ with Build 18362.1049+ or 18363.1049+ in 64-bit version</u> (WSL Kernel Update can't be updated in 32-Bit version)</p>
-            <p>You can see actual version and build pressing<strong>Win + R</strong>, then write <strong>winver</strong> and press <strong>Enter</strong>.</p>
+            <p>You can see actual version and build pressing <strong>Win + R</strong>, then write <code>winver</code> and press <strong>Enter</strong>.</p>
             <ol>
                 <li>
-                    <p>Activate Windows Subsystem for Linux. Run command from PowerShell with administrative rights. <code class="oneline">dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart</code></p>
+                    <p>Activate Windows Subsystem for Linux. Run next command from PowerShell with administrative rights. <code class="oneline">dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart</code></p>
                 </li>
                 <li>
-                    <p>Activate the Virtual Machine Platform. May need to enable this CPU option in BIOS. Run command from PowerShell with administrative rights.<code class="oneline">dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart</code></p>
+                    <p>Activate the Virtual Machine Platform. May need to enable this CPU option in BIOS. Run next command from PowerShell with administrative rights.<code class="oneline">dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart</code></p>
                 </li>
                 <li>
                     <p>In windows 10 the "hypervisor launch type" is not configured to working WSL2, you can see the actual status with
@@ -58,7 +58,7 @@
                     <code>Add-AppxPackage c:\path\to\Ubuntu_2004.2020.424.0_x64.appx</code>
                 </li>
             </ol>
-            <p>If you want, a <a target="_blank" href="downloads/update_WSL2.ps1" download>PowerShell script</a> can be used to make these changes and downloads. Just type in PowerShell <code>& c:\path\to\update_WSL2.ps1</code>or right click on file and the click on "run with PowerShell". Administrative permissions ask when running</p>
+            <p>If you want, a <a target="_blank" href="downloads/update_WSL2.ps1" download>PowerShell script</a> can be used to make these changes and downloads. Just type in PowerShell <code>& c:\path\to\update_WSL2.ps1</code>or right click on file and click on "run with PowerShell". Administrative permissions ask when running.</p>
             <ul>
                 <h3>Linux commands</h3>
                 <li>Open Linux terminal to set user name and password.</li>
@@ -70,19 +70,17 @@
                         <li>then change <strong>/home/&lt;username&gt;</strong> for <strong>/mnt/d</strong> or wanted folder</li>
                         <li>Save file and exit from vim pressing <stromg>Esc</stromg> and writing <code>:wq</code>, press <strong>Enter</strong>.</li>
                         <li>Exit from terminal with <code>logout</code></li>
-                        <li>To verify Enter again to terminal anb writing <code>cd ~</code> and press <strong>Enter</strong></li>
+                        <li>To verify Enter again to terminal and writing <code>cd ~</code> and press <strong>Enter</strong></li>
                         <li>Then write <code>pwd</code>and press <strong>Enter</strong></li>
-                        <li>Verify the folder showing are the selected. in ths example: <code>/mnt/d</code></li>
+                        <li>Verify the folder showing are the selected in ths example: <code>/mnt/d</code></li>
                     </ol>
                 </li>
                 <li>Run <code>sudo apt update</code> to retrieve the list of latest updates</li>
                 <li>Run <code>sudo apt upgrade</code> to upgrade Linux to the latest version.</li>
                 <li>Run <code>sudo apt install nodejs</code> to install node.js</li>
                 <li>Run <code>sudo apt install npm</code> to install Node Package Manager</li>
-                <li>Run <code>sudo npm install -g clean-css-cli uglifycss js-beautify html-minifier uglify-js minjson svgo</code> to install uglify, minify, beautify packages for .css .html and .js files using HTML-CSS-JS Prettify for Sublime Text</li>
                 <li>Run <code>git --version</code> to verify git installed version. Compare with the <a target="_blank" href="https://git-scm.com/downloads">git download webage</a></li>
                 <li>Run <code>sudo apt install ruby-full</code> to install Ruby on rails</li>
-                <li>Run <code>sudo gem install sass</code> to install SASS preprocessor</li>
                 <li>Run <code>sudo gem install compass</code> to install compass preprocessor</span></li>
             </ul>
         </article>
@@ -92,8 +90,7 @@
             <ol>
                 <li><a target="_blank" href="https://nodejs.org/en/download/">Node.js<div class="logo inline"><img class="nodejs" src="assets/nodejsLogo.svg"></div></a> - Node.js® A JavaScript software environment build with Chrome JavaScript V8 engine.
                     <ol type="a">
-                        <p>Run from Node.js Command-Line:</p>
-                        <li><code class="oneline">npm install -g clean-css-cli uglifycss js-beautify html-minifier uglify-js minjson svgo</code> <span>(Used to run minify package in Sublime Text)</span></li>
+                        <p>After install Node, run from Node.js Command-Line:</p>
                         <li><code class="oneline">npm install -g clean-css-cli uglifycss js-beautify html-minifier uglify-js minjson svgo</code> <span>(Used to run minify package in Sublime Text)</span></li>
                         <li><code class="oneline">npm install -g csslint</code><span>(Used to linter CSS code in Sublime Text)</span></li>
                         <li><code class="oneline">npm install -g jshint</code><span>(Used to linter JavaScript code in Sublime Text)</span></li>
@@ -120,14 +117,14 @@
                     <p>To set Ubuntu as default terminal:</p>
                     <ol>
                         <li>Click to down triangle in tittle bar, and choose Settings or press <strong>Ctrl</strong> + <strong>,</strong></li>
-                        <li>Search Linux distribution name in file's &gt; profile &gt; list an copy the GUID (for Ubuntu 20.02LTS is like 07b52e3e-de2c-5db4-bd2d-ba144ed6c273)</li>
-                        <li>Replace the GUID of Ubuntu in default profile to: <code>"defaultProfile": "{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}",</code></li>
+                        <li>Search Linux distribution name in settings file <strong>profile &gt; list </strong> and copy the GUID (for Ubuntu 20.02 LTS shows like 07b52e3e-de2c-5db4-bd2d-ba144ed6c273)</li>
+                        <li>Replace the GUID of Ubuntu in default profile to copied one: <code>"defaultProfile": "{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}",</code></li>
                         <a class="img-guide" href="assets/wt_UbuntuDefault.png"><img src="assets/wt_UbuntuDefault.png"></a>
                     </ol>
                 </li>
-                <li><a target="_blank" href="https://www.heidisql.com/download.php">Heidy Sql<div class="logo inline"><img class="heidySql" src="assets/heidySqlLogo.svg" /></div></a> - HeidiSQL is free software lets you see and edit data and structures from computers running one of the database systems MariaDB, MySQL, Microsoft SQL, PostgreSQL and SQLite.</li>
-                <li><a target="_blank" href="https://dev.mysql.com/downloads/windows/installer/8.0.html">Mysql Comunity<div class="logo inline"><img class="mysql" src="assets/mysqlLogo.svg" /></div></a> - MySQL Community Edition is a RDBMS freely downloadable version of the world's most popular open source database based on SQL – Structured Query Language.<strong>
-                        <p>** Verify and uninstall if "Mysql installer - Communuty" is installed, <u>not use the web version</u> of the installer
+                <li><a target="_blank" href="https://www.heidisql.com/download.php">Heidy Sql<div class="logo inline"><img class="heidySql" src="assets/heidySqlLogo.svg" /></div></a> - HeidiSQL is a free software lets you see and edit data and structures from computers running one of the database systems MariaDB, MySQL, Microsoft SQL, PostgreSQL and SQLite.</li>
+                <li><a target="_blank" href="https://dev.mysql.com/downloads/windows/installer/8.0.html">Mysql Comunity<div class="logo inline"><img class="mysql" src="assets/mysqlLogo.svg" /></div></a> - MySQL Community Edition is a RDBMS freely downloadable version of the world's most popular open source database based on SQL.<strong>
+                        <p>** Verify and uninstall if "Mysql installer - Communuty" is installed on your computer, and be carefully <u>not use the web version</u> of the installer
                     </strong></p>
                 </li>
                 <li><a target="_blank" href="https://git-scm.com/download/win">Git (GitBash)</a>
@@ -147,7 +144,7 @@
                         <li>httpd.conf - for DocumentRoot, the directory out of which you will serve your documents.</li>
                         <li>config.inc.php - Change the mysql/mariaDB login to <code>$cfg['Servers'][$i]['auth_type'] = 'cookie';</code> to request DB server user and password</li>
                         <li>Create localhost certificate. <a target="_blank" href="downloads/cert_localhost.cmd" download>A CommandLine script can downloaded here</a>.</li>
-                        <li>If you want add PHP to your system path, use PowerShell with administrator privileges, paste this code where <strong>"&ltc:\path\to\php_folder&gt;"</strong> is the folder of php.exe: <code class="oneline">Set-ItemProperty -Path 'Registry::HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Environment' -Name PATH -Value ((Get-ItemProperty -Path 'Registry::HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Environment' -Name PATH).path + ";&ltc:\path\to\php_folder&gt;");</code></p></li>
+                        <li>If you want add PHP to your system path, use PowerShell with administrator privileges, paste next code where <strong>"&ltc:\path\to\php_folder&gt;"</strong> is the folder of php.exe: <code class="oneline">Set-ItemProperty -Path 'Registry::HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Environment' -Name PATH -Value ((Get-ItemProperty -Path 'Registry::HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Environment' -Name PATH).path + ";&ltc:\path\to\php_folder&gt;");</code></p></li>
                     </ol>
                 </li>
             </ol>
@@ -227,7 +224,7 @@
                                     <li>add <code>"node_path": { "windows": "C:/path/to/node.exe", },</code></li>
                                 </ul>
                             </p>
-                            <p>SASS identation anod Linter cause warnings about identation, configure each SASS/SCSS file in 2 spaces and add next line:
+                            <p>SASS identation shows Linter warnings about identation, configure each SASS/SCSS file in 2 spaces and add next line:
                                 <ul>
                                     <li>Go to <strong>Preferences</strong> &gt; <strong>Package settings</strong> &gt; <strong>HTML-CSS-JS Prettify</strong> &gt; <strong>Plugin options - User</strong></li>
                                     <li>add <code> "use_editor_indentation": true,</code></li>
@@ -247,8 +244,8 @@
                             <ol>
                                 <li>Install the package : “Language - Spanish”</li>
                                 <li>Choose the language (View &gt;; Dictionary &gt;; Language - Spanish &gt;; es_Es)</li>
-                                <li>Be sure spelling is activated (F6 / View &gt;; Spell Check)</li>
-                                <li>Verify/add on Sublime Text preferences (Preferences &gt; settings &gt; User File) the line: <code>"dictionary": "Packages/Language - Spanish/es_ES.dic",</code></li>
+                                <li>Be sure spelling is activated (Press <strong>F6</strong> or go to <strong>View &gt; Spell Check</strong>)</li>
+                                <li>Verify/add on Sublime Text preferences (<strong>&gt; settings &gt; User File</strong>) the line: <code>"dictionary": "Packages/Language - Spanish/es_ES.dic",</code></li>
                             </ol>
                         </li>
                         <li>
@@ -258,7 +255,7 @@
                             <ol>
                                 <li>Install From Package Control</li>
                                 <li>Open Google Chrome, search and install liveReload extension <a target="_blank" href="https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei">here</a></li>
-                                <li>To use it with local files, be sure to enable “Allow access to file URLs” checkbox in Tools &gt; Extensions &gt; LiveReload after installation in Google Chrome.</li>
+                                <li>To use it with local files, be sure to enable "<strong>Allow access to file URLs</strong>" checkbox in Chrome's menu <strong>Tools &gt; Extensions &gt; LiveReload </strong> after installation.</li>
                                 <li>Open FireFox, search and install liveReload extension <a target="_blank" href="https://addons.mozilla.org/es/firefox/addon/livereload-web-extension/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search">here</a>.</li>
                                 <li>Open sublime text an edit:<br />
                                     Preferences -> package settings -> LiveReload -> Settings - User<br />
@@ -267,7 +264,7 @@
                                     *The "enabled_plugins" names are the .py filename of each plugin
                                 </li>
                             </ol>
-                            <p>To activate (if not runing) goto <strong>Preferences &gt; package settings &gt; LiveReload &gt; plugin-ins enable/disable</strong>. Then select Enable/Disable 400ms an activate from navigator the extension clicking</p>
+                            <p>To activate in Sublime Text (if not runing) goto <strong>Preferences &gt; package settings &gt; LiveReload &gt; plugin-ins enable/disable</strong>. Then select Enable/Disable 400ms an activate from navigator clicking on the extension icon</p>
                         </li>
                         <li>
                             <p><strong><u>Minify</u>:</strong> <a target="_blank" href="https://packagecontrol.io/packages/Minify">https://packagecontrol.io/packages/Minify</a></p>
@@ -312,7 +309,7 @@
                                     <p>Package name: <code class="oneline">sublimelinter-contrib-sass-lint</code>Requires: <a target="_blank" href="https://github.com/skovhus/SublimeLinter-contrib-sass-lint">sass-lint</a> <code>npm install -g sass-lint</code>to set ident spaces to 4 add next code to <strong>Preferences</strong> &gt; <strong>Package settings</strong> &gt; <strong>SublimeLinter</strong> &gt; <strong>Settings</strong> <code class="oneline">"linters": { "sass-lint": { "rules": {"indentation": [2, {"size": 4}]}},}</code></p>
                                 </li>
                                 <li>
-                                    <p>Package name: <code class="oneline">sublimelinter-php</code>Requires: <a target="_blank" href="https://github.com/SublimeLinter/SublimeLinter-php">PHP</a> The path to php.exe is required to linter PHP code, go to <strong>Preferences</strong> &gt; <strong>Package settings</strong> &gt; <strong>SublimeLinter</strong> &gt; <strong>Settings</strong> an add at same level of "linters:"{} <code class="oneline"> "paths": { "windows": ["&ltc:/path/to/php_folder&gt;",]},</code></p>
+                                    <p>Package name: <code class="oneline">sublimelinter-php</code>Requires: <a target="_blank" href="https://github.com/SublimeLinter/SublimeLinter-php">PHP</a> The path to php.exe is required to linter PHP code, go to <strong>Preferences</strong> &gt; <strong>Package settings</strong> &gt; <strong>SublimeLinter</strong> &gt; <strong>Settings</strong> an add at same level of <code>"linters:"{}</code> <code class="oneline"> "paths": { "windows": ["&ltc:/path/to/php_folder&gt;",]},</code></p>
                                 </li>
                             </ul>
                         </li><!-- End of Sublime Text linter package -->
