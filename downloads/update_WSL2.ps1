@@ -5,6 +5,7 @@ If (-NOT ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdent
   exit
 }
 clear-host;
+exit
 
 #Carpeta donde se descargaran y posteiormente se eliminaran los archivos descargados
 $DesktopPath = [Environment]::GetFolderPath("Desktop")
@@ -35,6 +36,11 @@ if(!$restarted){
 }
 
 if($restarted -eq "0"){
+    #actualización de Nuget y extensiones adiciones de powershell para uso desde Visual Studio Code
+    Show-txt("`nActualizando extensiones de PowerShell espere...");
+    powershell.exe -NoLogo -NoProfile -Command '[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; Install-Module -Name PackageManagement -Force -MinimumVersion 1.4.6 -Scope CurrentUser -AllowClobber -Repository PSGallery'
+
+
     #activación de WSL2 en Windows
     Show-txt("`nActivando Windows Subsystem for linux");
 
