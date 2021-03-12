@@ -3,4 +3,4 @@ A list of utilities, programs plug-ins and commands to setup a Windows 10 Web De
 
 Just read, click on any wanted utilities and/or follow the steps suggested :)
 
-## This is an incomplete guide, and only uses HTML/CSS for now
+## This is an incomplete guide, and only uses HTML/CSS for now, later the code incluse javascrip.
