@@ -5,7 +5,6 @@ If (-NOT ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdent
   exit
 }
 clear-host;
-exit
 
 #Carpeta donde se descargaran y posteiormente se eliminaran los archivos descargados
 $DesktopPath = [Environment]::GetFolderPath("Desktop")
@@ -39,7 +38,6 @@ if($restarted -eq "0"){
     #actualización de Nuget y extensiones adiciones de powershell para uso desde Visual Studio Code
     Show-txt("`nActualizando extensiones de PowerShell espere...");
     powershell.exe -NoLogo -NoProfile -Command '[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; Install-Module -Name PackageManagement -Force -MinimumVersion 1.4.6 -Scope CurrentUser -AllowClobber -Repository PSGallery'
-
 
     #activación de WSL2 en Windows
     Show-txt("`nActivando Windows Subsystem for linux");
@@ -97,7 +95,8 @@ if($restarted -eq "0"){
     start-sleep 5
     Show-txt("Terminado...");
     #limpieza de archivos y registro
-    Remove-ItemProperty -Path "Registry::HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run" -Name "RunWSL2" - force | Out-Null
+    Remove-ItemProperty -Path "Registry::HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run" -Name "RunWSL2" -force | Out-Null
+
     Remove-Item -Path "Registry::HKEY_CURRENT_USER\SOFTWARE\wsl2" -force | Out-Null
     if((Get-Item -Path "$DesktopPath\wsl_update_x64.msi" -ErrorAction SilentlyContinue)){
        Remove-Item "$DesktopPath\wsl_update_x64.msi"
