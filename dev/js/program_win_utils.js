@@ -153,36 +153,67 @@ let winUtils = [
 		links = [
 			{
 				href = "https://www.sourcetreeapp.com/",
-				text = "",
+				text = "Visit Sourcetree Home Page",
 				target = "_blank"
 			}
 		],
 		configs = [
 			{
-				instruction = "",
+				instruction = "May be you like to setup soircetree too, this is possible in <q>Tools</q> menu and selecting options",
 				steps = [
 					{
-						explain = "",
-						code = "",
-						altern = "",
-						image = ""
+						explain = "Setup User name and Email: In first tab (General) you can setup your name and email",
+					},{
+						explain = "To setup Github, bitbucket and/or other accounts go to <q>Authentication</q> tab to select and connect your services. ",
+					}
+				]
+			}
+		]
+	},{
+		name = "GitHub Desktop",
+		logo = "assets/img/githubDesktopLogo.svg",
+		desc = "Focus on what matters instead of fighting with Git. Whether you're new to Git or a seasoned user, GitHub Desktop simplifies your development work flow.",
+		links = [
+			{
+				href = "https://desktop.github.com/",
+				text = "Visit Desktop Github Home page",
+				target = "_blank"
+			}
+		],
+	},{
+		name = "XAMPP",
+		logo = "assets/img/xamppLogo.svg",
+		desc = "XAMPP is a completely free, easy to install Apache distribution containing MariaDB, PHP, and Perl. The XAMPP open source package has been set up to be incredibly easy to install and use. <strong>(<u>Warning</u>: Use XAMPP only for development, not in production environments)</strong>",
+		links = [
+			{
+				href = "https://www.apachefriends.org/es/index.html",
+				text = "Visit the XAMPP Home Page",
+				target = "_blank"
+			}
+		],
+		configs = [
+			{
+				instruction = "Maybe you want to configure any or all of the next configurations. You need to search for a files and change some parameters.",
+				steps = [
+					{
+						explain = "<q>httpd.conf</q> file to change the <code>DocumentRoot</code> and <code>&lt;Directory \"c:/path/to/files\"&gt;</code> paths. That's the folders where you will serve your documents.",
+					},{
+						explain = "<q>config.inc.php</q> to change the mysql/mariaDB login to request DB server user and password. Search and set the <q>auth_type</q> to <q>cookie</q>",
+						code = "$cfg['Servers'][$i]['auth_type'] = 'cookie';"
+					},{
+						explain = "Download a <a target=\"_blank\" href=\"downloads/cert_localhost.cmd\" download>command line</a> script to create an https certificate for https://localhost (instructions in spanish)",
+					},{
+						explain = "Download special <a target=\"_blank\" href=\"downloads/folder_cert.cmd\" download>command line</a> script for create an https certificate for a folders from above <q>DocumentRoot</q> with a personalized domain (instructions in spanish)."
+					},{
+						explain = "If you want add PHP to your system path, use PowerShell with administrator privileges, paste next code where	<q>c:\\path\\to\\php_folder</q> is the folder where php.exe file location.",
+						code = "Set-ItemProperty -Path 'Registry::HKEY_LOCAL_MACHINE\\System\\CurrentControlSet\\Control\\Session Manager\\Environment' -Name PATH -Value ((Get-ItemProperty -Path 'Registry::HKEY_LOCAL_MACHINE\\System\\CurrentControlSet\\Control\\Session Manager\\Environment' -Name PATH).path + \";c:\\path\\to\\php_folder\\\")"
 					}
 				]
 			}
 		]
 	}
+		
 ]
-/*
-
-	<li>
-		<a target="_blank" href="https://www.sourcetreeapp.com/">Sourcetree</a
-		><span class="logo inline"><img class="sourcetree" src="assets/img/sourcetreeLogo.svg" /></span>
-		- Sourcetree simplifies how you interact with your Git repositories so you can focus on coding.
-		Visualize and manage your repositories through Sourcetree's simple Git GUI.
-	</li>
-
-*/
-
 
 
 /*
@@ -320,56 +351,3 @@ function addWinUtils (destination){
 		dest.appendChild(article);
 	}
 }
-
-/*
-<ol>
-	<li>
-		<a target="_blank" href="https://desktop.github.com/">GitHub Desktop</a
-		><span class="logo inline"
-			><img class="githubDesktop" src="assets/img/githubDesktopLogo.svg"
-		/></span>
-		- Focus on what matters instead of fighting with Git. Whether you're new to Git or a seasoned
-		user, GitHub Desktop simplifies your development work flow.
-	</li>
-	<li>
-		<a target="_blank" href="https://www.apachefriends.org/es/index.html">XAMPP</a
-		><span class="logo inline"><img class="xampp" src="assets/img/xamppLogo.svg" /></span>
-		- XAMPP is a completely free, easy to install Apache distribution containing MariaDB, PHP, and
-		Perl. The XAMPP open source package has been set up to be incredibly easy to install and use.
-		<strong>(<u>Warning</u>: Use XAMPP only for development environment)</strong>
-		<ol>
-			Remember to configure:
-			<li>
-				httpd.conf - for DocumentRoot, the directory out of which you will serve your documents.
-			</li>
-			<li>
-				config.inc.php - Change the mysql/mariaDB login to
-				<code>$cfg['Servers'][$i]['auth_type'] = 'cookie';</code>
-				to request DB server user and password
-			</li>
-			<li>
-				Create localhost certificate.
-				<a target="_blank" href="downloads/cert_localhost.cmd" download
-					>A CommandLine script can downloaded here</a
-				>.
-			</li>
-			<li>
-				I
-				<p>
-					If you want add PHP to your system path, use PowerShell with administrator
-					privileges, paste next code where
-					<strong>"&ltc:\path\to\php_folder&gt;"</strong>
-					is the folder of php.exe:
-					<code class="oneline"
-						>Set-ItemProperty -Path
-						'Registry::HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session
-						Manager\Environment' -Name PATH -Value ((Get-ItemProperty -Path
-						'Registry::HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session
-						Manager\Environment' -Name PATH).path + ";&ltc:\path\to\php_folder&gt;");</code
-					>
-				</p>
-			</li>
-		</ol>
-	</li>
-</ol>
-*/
