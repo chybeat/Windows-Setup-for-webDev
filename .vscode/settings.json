@@ -1,0 +1,13 @@
+{
+	"liveServer.settings.fullReload": false,
+	"liveSassCompile.settings.formats": [
+		{
+			"format": "compressed",
+			"extensionName": ".css",
+			"savePath": "/public_html/css"
+		}
+	],
+	"es6-css-minify.minifyOnSave": "no",
+	"es6-css-minify.jsMinPath": "/public_html/js",
+	"es6-css-minify.jsPostfix": "",
+}

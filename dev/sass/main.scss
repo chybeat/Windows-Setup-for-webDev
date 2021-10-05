@@ -1,0 +1,136 @@
+//Variables of colors
+$main-backgound: #161619;
+$main-font-color: #d6cece;
+
+$link-text-color: #5ea4d6;
+
+$code-backgound-color: #3e3e3e;
+$code-highlight-color: #ccc;
+
+$img-highlight-color: #0f466d;
+
+//SCSS
+html {
+	background-color: $main-backgound;
+	color: $main-font-color;
+	font-family: Sans-Serif;
+}
+
+a {
+	color: $link-text-color;
+	display: inline-block;
+	font-style: unset;
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: underline;
+	}
+}
+kbd {
+	color: #000;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	padding: 0.1em 0.5em;
+	margin: 0 0.2em;
+	box-shadow: 0 1px 0px rgba(0, 0, 0, 0.2), 0 0 0 2px #fff inset;
+	background-color: #f7f7f7;
+}
+
+code {
+	background-color: $code-backgound-color;
+	border-radius: 0.25em;
+	border: solid 1px $code-highlight-color;
+	color: $code-highlight-color;
+	display: inline-block;
+	font-size: 1.25em;
+	margin: 0 0.5em 0 0;
+	padding: 0.01em 0.5em;
+	word-wrap: break-word;
+	&.oneline {
+		padding: 0.5em;
+	}
+	pre {
+		margin: 0;
+	}
+}
+
+body > header {
+	.logo {
+		img {
+			height: 256px;
+			max-height: 256px;
+			max-width: 256px;
+			width: 256px;
+		}
+	}
+}
+
+ol,
+ul {
+	margin: 1.5em 0;
+}
+
+li {
+	margin: 0.5em;
+}
+
+.img-guide {
+	background-color: none;
+	border: 1px solid $img-highlight-color;
+	display: block;
+	height: 8em;
+	position: relative;
+	transition: background-color 0.3s 0s ease-in-out;
+	width: 8em;
+
+	img {
+		display: block;
+		left: 50%;
+		max-height: 7em;
+		max-width: 7em;
+		opacity: 0.7;
+		padding: calc(0.5em - 1px);
+		position: absolute;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		transition: opacity 0.3s 0s ease-in-out;
+	}
+
+	&:hover {
+		background-color: $img-highlight-color;
+		transition: background-color 0.1s 0s ease-in-out;
+
+		img {
+			opacity: 1;
+			transition: opacity 0.1s 0s ease-in-out;
+		}
+	}
+}
+
+.logo {
+	max-height: fit-content;
+	max-width: fit-content;
+
+	&.inline {
+		display: inline-block;
+		height: 100%;
+		margin: 0 0.5em;
+		vertical-align: middle;
+		width: auto;
+	}
+
+	img {
+		height: 32px;
+		max-height: 32px;
+		max-width: 32px;
+		width: 32px;
+	}
+}
+
+.oneline {
+	display: block;
+	margin: 0.5em 0;
+	max-width: 95%;
+	width: fit-content;
+}
