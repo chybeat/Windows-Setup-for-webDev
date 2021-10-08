@@ -14,6 +14,7 @@ html {
 	background-color: $main-backgound;
 	color: $main-font-color;
 	font-family: Sans-Serif;
+	line-height: 1.5em;
 }
 
 a {
@@ -39,16 +40,19 @@ kbd {
 
 code {
 	background-color: $code-backgound-color;
+	border: solid 1px #6e6e6e;
 	border-radius: 0.25em;
-	border: solid 1px $code-highlight-color;
 	color: $code-highlight-color;
 	display: inline-block;
-	font-size: 1.25em;
-	margin: 0 0.5em 0 0;
-	padding: 0.01em 0.5em;
+	font-size: 1.2em;
+	height: 1.3em;
+	padding: 0.01em 0.25em;
 	word-wrap: break-word;
 	&.oneline {
-		padding: 0.5em;
+		//		border: solid 1px $code-highlight-color;
+		border: solid 1px #6e6e6e;
+		padding: 0.25em;
+		height: auto;
 	}
 	pre {
 		margin: 0;
@@ -73,6 +77,11 @@ ul {
 
 li {
 	margin: 0.5em;
+}
+
+q {
+	word-break: keep-all;
+	white-space: nowrap;
 }
 
 .img-guide {

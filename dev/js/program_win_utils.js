@@ -1,4 +1,4 @@
-//Instructions for easily installation for WSL
+//Windows utilities
 let winUtils = [
 	{
 		name = "Node.js",
@@ -203,7 +203,7 @@ let winUtils = [
 					},{
 						explain = "Download a <a target=\"_blank\" href=\"downloads/cert_localhost.cmd\" download>command line</a> script to create an https certificate for https://localhost (instructions in spanish)",
 					},{
-						explain = "Download special <a target=\"_blank\" href=\"downloads/folder_cert.cmd\" download>command line</a> script for create an https certificate for a folders from above <q>DocumentRoot</q> with a personalized domain (instructions in spanish)."
+						explain = "Download special <a target=\"_blank\" href=\"downloads/folder_cert.cmd\" download>command line</a> script for create an https certificate for a folders from above <q>DocumentRoot</q> path with a personalized domain (instructions in spanish)."
 					},{
 						explain = "If you want add PHP to your system path, use PowerShell with administrator privileges, paste next code where	<q>c:\\path\\to\\php_folder</q> is the folder where php.exe file location.",
 						code = "Set-ItemProperty -Path 'Registry::HKEY_LOCAL_MACHINE\\System\\CurrentControlSet\\Control\\Session Manager\\Environment' -Name PATH -Value ((Get-ItemProperty -Path 'Registry::HKEY_LOCAL_MACHINE\\System\\CurrentControlSet\\Control\\Session Manager\\Environment' -Name PATH).path + \";c:\\path\\to\\php_folder\\\")"
@@ -214,7 +214,6 @@ let winUtils = [
 	}
 		
 ]
-
 
 /*
 	{
