@@ -250,7 +250,7 @@ function addWinUtils (destination){
 	for (var util of Object.values(winUtils)) {
 		// Generate the container for current util in list
 		article = document.createElement("article");
-
+		article.id = attrValueText(util.name)
 		//creating the header for current util
 		header = document.createElement("header");
 

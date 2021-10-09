@@ -2,19 +2,18 @@
 let wslInstEasy = [
 	{
 		title = "One Easy way",
-		info = "Try on PowerShell (with administrative privileges) the command bellow. The command enable the required optional components, download the latest linux kernel, set WSL 2 as your default, and install a Linux distribution for you <i>(Ubuntu by default, see below to change this)</i>.",
+		info = "Try on PowerShell (with administrative privileges) the command bellow. The command enable the required optional components, download the latest linux kernel, set WSL 2 as your default, and install a Linux distribution for you <i>(Ubuntu by default, see below to change the distro)</i>.",
 		code = "wsl --install",
 		links = [
 			{
 				href = "https://docs.microsoft.com/en-us/windows/wsl/install",
-				text = "Microsoft documentation page for wsl --install command",
+				text = "Microsoft documentation page install WSL",
 				target = "_blank"
 			}
 		]
 	},{
 		title = "Another Way",
-		info = "If the last command fails, may be you need especify the linux distribution <code class=\"online\">wsl --install -d ubuntu</code>.<br><br>",
-		info = this.info + "To see a list of available Linux distributions available for download, enter <code class=\"oneline\">wsl -l -o</code>",
+		info = "If the last command fails, may be you need especify the linux distribution: <code class=\"oneline\">wsl --install -d Ubuntu</code> To see a list of available Linux distributions available for download, enter <code class=\"oneline\">wsl -l -o</code>",
 		links = [
 			{
 				href = "https://docs.microsoft.com/en-us/windows/wsl/install#change-the-default-linux-distribution-installed",
@@ -40,7 +39,7 @@ let wslInstructions = [
 		code = "BCDEDIT /Set {current} hypervisorlaunchtype auto"
 	},{
 		title = "Restart computer",
-		info = ">>>> At this point a computer restart is required. <<<<",
+		info = "<kbd>&#9888;</kbd>At this point a computer restart is required.<kbd>&#9888;</kbd>",
 	},{
 		title = "Download Windows Subsystem for Linux 2 kernel update",
 		info = "Download from link bellow the WSL2 kernel Update. Then install it. Read the information from micrsoft",
@@ -50,7 +49,7 @@ let wslInstructions = [
 				text = "Download WSL2 kernel update"
 			},{
 				href = "https://docs.microsoft.com/en-us/windows/wsl/install-manual",
-				text = "Information about WSL2",
+				text = "Manual installation steps for older versions of WSL",
 				target = "_blank"
 			}
 		]
@@ -135,24 +134,28 @@ let linuxConfig = [
 */
 
 function addWsl2 (destination){
-	
+
+	dest = document.querySelector(destination);
 	title = document.createElement("h3");
 	title.appendChild(document.createTextNode("Automatic installation and activation for Windows Subsystem for Linux"));
-	document.querySelector(destination).appendChild(title);
+	dest.appendChild(title);
 	htmlWSL(destination,wslInstEasy,"ol")
 	
-	//Title for manually activarion
+	//Title for manually activation
 	title = document.createElement("h3");
 	title.appendChild(document.createTextNode("Manually installation and activation for Windows Subsystem for Linux"));
-	document.querySelector(destination).appendChild(title);
-
+	dest.appendChild(title);
+	desc = document.createElement("p");
+	desc.innerHTML = "If automatic installation fails or you want, is possible to activate WSL manually (or automated) following the next steps using Powershell."
+	dest.appendChild(desc);
 	htmlWSL(destination,wslInstructions,"ol")
 	
 	title = document.createElement("h3");
 	title.appendChild(document.createTextNode("Commands and configurations for Linux"));
-	document.querySelector(destination).appendChild(title);
+	dest.appendChild(title);
 	htmlWSL(destination,linuxConfig,"ul")
 }
+
 function htmlWSL (destination,object,ListType){
 	let dest = document.querySelector(destination);
 	/*main list tag*/

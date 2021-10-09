@@ -30,6 +30,18 @@ const browsersData = {
 		desc: "This version is the bleeding edge development from Opera; features will be piloted, and may be shelved, taken back to the drawing board, or taken forward to the Opera Next stream.",
 	},
 };
+/*
+browserName: {
+	name: "",
+	href: "",
+	img: {
+		class: "",
+		src: "",
+	},
+	linkInfo: "",
+	desc: "",
+},
+*/
 
 function addWebBrowsers(destination) {
 	let dest = document.querySelector(destination);
@@ -39,6 +51,7 @@ function addWebBrowsers(destination) {
 	for (var browser of Object.values(browsersData)) {
 		/* Generate the li tag for current element list */
 		li = document.createElement("li");
+		li.id = attrValueText(browser.name);
 
 		/* Link info */
 		link = document.createElement("a");
@@ -84,26 +97,3 @@ function addWebBrowsers(destination) {
 	}
 	dest.appendChild(mainList);
 }
-
-/*
-**************** structure example start
-<ol>
-	<li>
-		<a target="_blank" href="https://www.google.com/chrome/dev/">
-			Google Chrome Dev
-			<span class="logo inline">
-				<img class="chrome" src="assets/imgs/chromeDevLogo.svg" />
-			</span>
-		</a>
-	</li>
-	<li>
-		<a href="https://download.mozilla.org/?product=firefox-devedition-stub&os=win&lang=es-ES">
-			Firefox Developer Edition (Direct Download)
-			<span class="logo inline">
-				<img class="firefox" src="assets/imgs/firefoxDevLogo.svg" />
-			</span>
-		</a>
-	</li>
-</ol>
-**************** structure example end
-*/
