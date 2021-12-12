@@ -1,37 +1,37 @@
-const browsersData = {
-	Chrome: {
+const browsersData = [
+	{
 		name: "Google Chrome Dev",
 		href: "https://www.google.com/chrome/dev/",
 		img: {
 			class: "chrome",
-			src: "assets/img/chromeDevLogo.svg",
+			src: "assets/img/webBrowser-chromeDev.svg",
 		},
 		linkInfo: "(Direct Download)",
 		desc: "Google Chrome for developers was built for the open web. You can test cutting-edge web platform APIs and developer tools that are updated weekly.",
 	},
-	Firefox: {
+	{
 		name: "Firefox Developer Edition",
 		href: "https://download.mozilla.org/?product=firefox-devedition-stub&os=win&lang=es-ES",
 		img: {
 			class: "firefox",
-			src: "assets/img/firefoxDevLogo.svg",
+			src: "assets/img/webBrowser-firefoxDev.svg",
 		},
 		linkInfo: "(Go to web)",
 		desc: "Firefox Developer Edition is the blazing fast browser that offers cutting edge developer tools and latest features included in the user (normal or non developer) browser.",
 	},
-	Opera: {
-		name: "Opera developer",
-		href: "https://www.opera.com/download#developer",
+	{
+		name: "Opera Developer",
+		href: "https://www.opera.com/computer/beta",
 		img: {
 			class: "firefox",
-			src: "assets/img/OperaDeveloper.svg",
+			src: "assets/img/webBrowser-operaDeveloper.svg",
 		},
 		linkInfo: "(Go to web)",
 		desc: "This version is the bleeding edge development from Opera; features will be piloted, and may be shelved, taken back to the drawing board, or taken forward to the Opera Next stream.",
 	},
-};
+];
 /*
-browserName: {
+{
 	name: "",
 	href: "",
 	img: {

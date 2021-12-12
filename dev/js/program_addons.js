@@ -1,53 +1,436 @@
 //Instructions for easily installation for WSL
-let plugAddExt = [
+let openExtensionView =
+	"Bring up the Extensions view by clicking on the Extensions icon in the Activity Bar on the side of VS Code or the View: Extensions command <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>X</kbd>).";
+
+const plugAddExt = [
 	{
-		mainProgram = "",
-		extensions = [
+		name: "Live Server - Web Extension",
+		mainProgram: ["Google Chrome Dev", "Firefox Developer Edition", "Opera Developer"],
+		desc: "This browser add-on is an extension for a developer tool in VS Code editor (Live Server). With this add-on installed, along with the VS Code extension, it gives you a functionality to automatically update your website on save; for other files than just .htm and .html.<br><br>So specifically, with this add-on, live reload will also work with the following server-side files within the spectrum of: PHP, .NET and NodeJS.",
+		icon: "addOn-liveReloadExtension-Logo.svg",
+		links: [
 			{
-				name = "",
-				desc = "",
-				icon = "",
-				links = [
+				specific: true,
+				program: ["Google Chrome Dev", "Opera Developer"],
+				href: "https://chrome.google.com/webstore/detail/live-server-web-extension/fiegdmejfepffgpnejdinekhfieaogmj",
+				text: "Google Chrome Extension",
+				title: "Visit the Live Server Web Extension on chome web store",
+				target: "_blank",
+			},
+			{
+				specific: true,
+				program: "Firefox Developer Edition",
+				href: "https://addons.mozilla.org/en-US/firefox/addon/live-server-web-extension/",
+				text: "Firefox Complement",
+				title: "Visit the Live Server Web Extension on Firefox Browser Add-ons",
+				target: "_blank",
+			},
+		],
+		settings: [
+			{
+				title: "Direct Setup",
+				instruct: [
 					{
-						href = "",
-						text = "",
-						title = "",
-						target = ""
-					}
+						explain:
+							"If you doesn't coding a server side language (PHP, .NET or NodeJS) you no need to configure the extension in browser, just activate the visual studio code extension makes the refresh on browser. For server side language follow the next steps",
+						steps: [
+							"Install Visual Studio Code from Microsoft. (code editor)",
+							"Install VS Code Live Server. (extension to code editor)",
+							"Install the browser add-on (Chrome or Firefox.)",
+							"Install and run a server on your machine(PHP, .NET or NodeJS)",
+							"Place your app on the server and open your project there.",
+							'Enter the neccesary fields (screenshot below)<ol type="a"><li><strong>Actual Server Address:</strong> is the address where your server is located and the port.</li><li><strong>Live Server Address:<strong> is the address where Visual Studio code extension is running.',
+							"Push the <i>Go Live-button</i> in your editor's statusbar.",
+							"Visit the <i>Actual Server Address<i>",
+						],
+						image: "assets/img/addOn-LiveReloadExtension-DirectSetup.png",
+					},
 				],
-				uses = [
+			},
+		],
+	},
+	{
+		name: "Remote - WSL",
+		mainProgram: "Visual Studio Code",
+		desc: "The Remote - WSL extension lets you use Visual Studio Code on Windows to build Linux applications that run on the Windows Subsystem for Linux (WSL). You get all the productivity of Windows while developing with Linux-based tools, runtimes, and utilities.",
+		icon: "assets/img/addOn-remoteWSL-logo.png",
+		links: [
+			{
+				href: "https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl",
+				text: "Remote - WSL MaketPlace",
+				title: "Go to Remote WSL Marketplace page",
+				target: "_blank",
+			},
+		],
+		uses: [
+			{
+				title: "Install from marketplace",
+				instruct: [
 					{
-						title = "",
-						instruct = [
-							{
-								explain = "",
-								image = "",
-								steps =[
-									"",
-								]
-							}
+						image: "assets/img/addOn-remoteWSL-install.png",
+						steps: [
+							"Launch Visual Studio Code.",
+							openExtensionView,
+							'Paste the following text and press enter:<code class="oneline">ms-vscode-remote.remote-wsl</code>',
+							'Click on "install" button',
+						],
+					},
+				],
+			},
+			{
+				title: "Open Visual Studio Code from WSL terminal",
+				instruct: [
+					{
+						explain:
+							"Launch a new instance of Visual Studio Code connected to WSL by opening a WSL terminal, navigating to the folder of your choice, and typing the code below. First time you launch a Visual Studio Code server will be installed.",
+						code: "code .",
+						image: "addOn-remoteWSL-use-open-vscode-from-linux-terminal.png",
+					},
+				],
+			},
+			{
+				title: "Open a WSL instance from Visual Studio Code",
+				instruct: [
+					{
+						explain:
+							"It's possible to open an instance WSL From Visual Studio Code. select the green remote indicator in the lower left corner of the status bar and selecting the option you want.",
+						image: "addOn-remoteWSL-use-open-wsl-from-vscode.png",
+						steps: [
+							"Select the green remote indicator in the lower left corner of the status bar",
+							"Select the option you want",
+						],
+					},
+				],
+			},
+		],
+	},
+	{
+		name: "Powershell",
+		mainProgram: "Visual Studio Code",
+		desc: "Develop PowerShell modules, commands and scripts in Visual Studio Code!",
+		icon: "addOn-powershellExtension-logo.svg",
+		links: [
+			{
+				specific: true,
+				href: "https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell",
+				text: "Powershell support extension for VS Code",
+				title: "Visite the Extension marketplace site",
+				target: "_blank",
+			},
+		],
+		uses: [
+			{
+				title: "Install from market place",
+				instruct: [
+					{
+						explain:
+							"Tou can intall the powershell extension from market place, just follow the next steps:",
+						code: "",
+						image: "",
+						steps: [
+							"Launch Visual Studio Code.",
+							openExtensionView,
+							'Paste the following text and press enter:<code class="oneline">ms-vscode.PowerShell</code>',
+							'Click on "install" button',
+						],
+					},
+				],
+			},
+		],
+		settings: [
+			{
+				title: "Package management update",
+				instruct: [
+					{
+						explain:
+							"The PowerShell extension, can shows a message advertising about PackageManagemnt issues and requires update. Follow next steps and the message dissapears.",
+						steps: [
+							"Launch Powershell with administrator privileges.",
+							"paste the following command, and press enter.<code class=\"oneline\">powershell.exe -NoLogo -NoProfile -Command '[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; Install-Module -Name PackageManagement -Force -MinimumVersion 1.4.6 -Scope CurrentUser -AllowClobber -Repository PSGallery'</code>",
+							"Accept any change and update (NuGet and/or PackageManagement) if asked",
+						],
+					},
+				],
+			},
+		],
+	},
+];
+
+function addOnTo(sourceInfo) {
+	// get programs name
+	let software = new Array();
+	for (var source of Object.values(sourceInfo)) {
+		software.push(source.name);
+	}
+
+	if (software.length > 0) {
+		for (var prog of Object.values(software)) {
+			for (var ext of Object.values(plugAddExt)) {
+				// if the extension has the mainprogram name the extension info will be added to the program tag container.
+				if (ext.mainProgram.includes(prog)) {
+					dest = document.querySelector("#" + attrValueText(prog));
+					console.log(extHtml(ext));
+					dest.appendChild(extHtml(ext));
+				}
+			}
+		}
+	}
+}
+
+function addPlugins(destination) {
+	console.log(destination);
+}
+
+function extHtml(extData) {
+	//be carefull returns html Object!
+
+	//Extension container
+	let mainExtContainer = document.createElement("div");
+	mainExtContainer.className = "ext-addon";
+
+	return mainExtContainer;
+}
+
+/*
+ */
+
+/*
+	{
+		name : "",
+		mainProgram : "",
+		desc : "",
+		icon : "",
+		links : [
+			{
+				specific : true,
+				program : "",
+				href : "",
+				text : "",
+				title : "",
+				target : ""
+			}
+		],
+		uses : [
+			{
+				title : "",
+				instruct : [
+					{
+						explain : "",
+						code : "",
+						image : "",
+						steps : [
+							"",
 						]
 					}
-				],
-				configs = [
+				]
+			}
+		],
+		settings : [
+			{
+				title : "",
+				instruct : [
 					{
-						title = "",
-						instruct = [
-							{
-								explain = "",
-								image = "",
-								steps =[
-									"",
-								]
-							}
+						explain : "",
+						code : "",
+						image : "",
+						steps : [
+							"",
 						]
 					}
 				]
 			}
 		]
 	}
-]
-//Instructions for install WSL with linux Ubuntu manually
+*/
+/*
+<li>
+<!-- Start of VsCode  Plugins-->
+????update Node.js:
+npm install -g
+npm-windows-upgrade -p -v latest
+
+<p>Extension to install:</p>
+<ul>
+	<li>
+		<p>
+			<span class="logo inline"
+				><img class="remoteWSL" src="assets/img/prettierLogo.svg" /></span
+			><strong><u>Prettier - Code formatter</u>:</strong
+			><a target="_blank" href="https://prettier.io/">https://prettier.io/</a>
+		</p>
+		<p>
+			Prettier is an opinionated code formatter. It enforces a consistent style by parsing
+			your code and re-printing it with its own rules that take the maximum line length
+			into account, wrapping code when necessary.
+		</p>
+		<p>
+			<strong>Install: </strong>Launch VS Code Quick Open <strong>Ctrl + P</strong>, paste
+			the following command, and press enter.
+			<code>ext install esbenp.prettier-vscode</code>
+		</p>
+		<p>
+			<strong>Use:</strong> Create a
+			<a target="blank" href="https://prettier.io/docs/en/configuration.html">
+				configuration file</a
+			>
+			to improve the use/execution of Prettier. You can read the documentation
+			<a target="blank" href="https://prettier.io/docs/en/configuration.html">here</a>
+			for more information.
+		</p>
+		<p>
+			<strong>Configuration:</strong> Press <strong>Ctrl + P</strong> to pen Command
+			Palette, type
+			<code>&gt;Preferences: Open Settings (JSON)</code>
+			and paste the code:
+			<code class="oneline">"editor.defaultFormatter": "esbenp.prettier-vscode",</code>
+			For better "readability" and avoid a lot of lines for code, paste nex code in
+			preferences (JSON) file (Recomend for development and prettier
+			<code class="oneline">"prettier.printWidth": 140,</code>
+			default is 80).
+		</p>
+	</li>
+	<li>
+		<p>
+			<span class="logo inline"
+				><img class="colorHighlight-icon" src="assets/img/colorHighlight.png" /></span
+			><strong><u>Color Highlight</u>:</strong
+			><a
+				target="_blank"
+				href="https://marketplace.visualstudio.com/items?itemName=naumovs.color-highlight"
+				>https://marketplace.visualstudio.com/items?itemName=naumovs.color-highlight</a
+			>
+		</p>
+		<p>Styles css/web colors found in your document.</p>
+		<p>
+			<strong>Install: </strong>Launch VS Code Quick Open pressing
+			<strong>Ctrl + P</strong>, paste the following command, and press enter.
+			<code>ext install naumovs.color-highlight</code>
+		</p>
+		<p>
+			<strong>Configuration: </strong> Press <strong>Ctrl + P</strong> to pen Command
+			Palette, type
+			<code>&gt;Preferences: Open Settings (JSON)</code>
+			to enter the configurations:
+		</p>
+		<p>
+			<code>"color-highlight.matchWords": true,</code>
+			- If a color word is found apply the highlight
+		</p>
+		<p>
+			<code>"color-highlight.markRuler": true,</code>
+			- Show colored square in scroll bar to indentify where a color is set.
+		</p>
+	</li>
+	<li>
+		<p>
+			<span class="logo inline"
+				><img
+					class="bracketPairColorizer-icon"
+					src="assets/img/bracketPairColorizer.png" /></span
+			><strong><u>Bracket pair colorizer</u>:</strong
+			><a
+				target="_blank"
+				href="https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer"
+				>https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer</a
+			>
+		</p>
+		<p>
+			This extension allows matching brackets to be identified with colours. The user can
+			define which characters to match, and which colours to use.
+		</p>
+		<p>
+			<strong>Install: </strong>Launch VS Code Quick Open pressing
+			<strong>Ctrl + P</strong>, paste the following command, and press enter.
+			<code>ext install CoenraadS.bracket-pair-colorizer</code>
+		</p>
+		<p>
+			<strong>Configuration: </strong> Press <strong>Ctrl + P</strong> to pen Command
+			Palette, type
+			<code>&gt;Preferences: Open Settings (JSON)</code>
+			to enter the configurations:
+		</p>
+		<p>
+			<code> "bracketPairColorizer.showBracketsInGutter": true,</code>
+			- View brackets near line counter (left side of the code)
+		</p>
+		<p>
+			<code>"color-highlight.markRuler": true,</code>
+			- Show colored square in scroll bar to indentify where a color is set.
+		</p>
+	</li>
+	<li>
+		<p>
+			<span class="logo inline"
+				><img
+					class="cssFlexboxCheatsheet-icon"
+					src="assets/img/cssFlexboxCheatsheet.png" /></span
+			><strong><u>CSS Flexbox Cheatsheet</u>:</strong
+			><a
+				target="_blank"
+				href="https://marketplace.visualstudio.com/items?itemName=dzhavat.css-flexbox-cheatsheet"
+				>https://marketplace.visualstudio.com/items?itemName=dzhavat.css-flexbox-cheatsheet</a
+			>
+		</p>
+		<p>VS Code extension that lets you open a flexbox cheatsheet directly in the editor.</p>
+		<p>
+			iii <strong>Install: </strong>Launch VS Code Quick Open pressing
+			<strong>Ctrl + P</strong>, paste the following command, and press enter.
+			<code>ext install dzhavat.css-flexbox-cheatsheet</code>
+		</p>
+		<p>
+			These settings are from lastest settings file: {"workbench.colorTheme": "Visual Studio Dark",
+			"liveServer.settings.fullReload": true, "liveSassCompile.settings.formats": [
+			{ "format": "compressed", "extensionName": ".css", "savePath": null } ],
+			"liveSassCompile.settings.autoprefix": [], "es6-css-minify.autoprefixer": { },
+			"es6-css-minify.minifyOnSave": "yes", "php.suggest.basic": false, "[javascript]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode" }, "[html]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode" }, "prettier.tabWidth": 4,
+			"prettier.useTabs": true }
+		</p>
+	</li>
+	
+	<h1>Buscar!!!</h1>
+	Auto Rename Tag
+	
+	<li>Better Comments</li>
+	<li>CSS Linter</li>
+	<li>Code Spell Checker</li>
+	<li>Color Highlight</li>
+	<li>Git Graph</li>
+	<li>Git Lens</li>
+	<li>Image Preview</li>
+	<li>Import Cost</li>
+	<li>Javascript / JSON Linter</li>
+	<li>Live Server</li>
+	<li>Live Server</li>
+	<li>Markdown Preview Enhanced</li>
+				settings.js     "markdown-preview-enhanced.previewTheme": "github-dark.css",
+	<li>Material icon Theme</li>   settings.js  "workbench.iconTheme": "material-icon-theme",
+
+	<li>Minify / prettify</li>
+	<li>PHP linter</li>
+	<li>Path Intellisense</li>
+	<li>Prettier</li>
+	<li>SASS / SCSS Linter</li>
+	<li>SASS SCSS compiler /build</li>
+	<li>Sort Lines</li>
+	<li>SQL Linter</li>
+	<li>Thunder Client</li>
+	<li>¿¿Sass scss??</li>
+	
+
+	Linux
+	(tree) para ver un arbol de carpetas desde linux sudo apt install tree , despues $sudo apt-get update
+	(net-tools) sudo apt install net-tools
+
+	<li></li>
+	</ul>
+
+
+<!-- End of VsCodse -->
+https://code.visualstudio.com/docs/languages/javascript -> read for linter
+
+*/
 
 /*
 function htmlWSL (destination,object,ListType){
