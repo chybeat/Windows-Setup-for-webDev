@@ -14,27 +14,18 @@ html {
 	background-color: $main-backgound;
 	color: $main-font-color;
 	font-family: Sans-Serif;
+	font-size: 16px;
 }
 
-a {
-	color: $link-text-color;
-	display: inline-block;
-	font-style: unset;
-	text-decoration: none;
-
-	&:hover {
-		text-decoration: underline;
+body > header {
+	.logo {
+		img {
+			height: 256px;
+			max-height: 256px;
+			max-width: 256px;
+			width: 256px;
+		}
 	}
-}
-kbd {
-	color: #000;
-	display: inline-block;
-	border: 1px solid #ccc;
-	border-radius: 4px;
-	padding: 0.1em 0.5em;
-	margin: 0 0.2em;
-	box-shadow: 0 1px 0px rgba(0, 0, 0, 0.2), 0 0 0 2px #fff inset;
-	background-color: #f7f7f7;
 }
 
 code {
@@ -58,15 +49,30 @@ code {
 	}
 }
 
-body > header {
-	.logo {
-		img {
-			height: 256px;
-			max-height: 256px;
-			max-width: 256px;
-			width: 256px;
-		}
+a {
+	color: $link-text-color;
+	display: inline-block;
+	font-style: unset;
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: underline;
 	}
+}
+kbd {
+	color: #000;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	padding: 0.1em 0.5em;
+	margin: 0 0.2em;
+	box-shadow: 0 1px 0px rgba(0, 0, 0, 0.2), 0 0 0 2px #fff inset;
+	background-color: #f7f7f7;
+}
+
+h5,
+h6 {
+	font-size: 1rem; //Important, h5 font-size is smaller than visualy requested
 }
 
 ol,
@@ -83,14 +89,24 @@ q {
 	white-space: nowrap;
 }
 
+.button {
+	margin: 0 0.25em;
+}
+
+.explicative {
+	display: inline;
+	font-size: 0.75rem;
+	font-weight: normal;
+}
+
 .img-guide {
-	background-color: none;
+	background-color: transparent;
 	border: 1px solid $img-highlight-color;
 	display: block;
-	height: 8em;
+	max-height: 16rem;
+	max-width: 32rem;
 	position: relative;
 	transition: background-color 0.3s 0s ease-in-out;
-	width: 8em;
 
 	img {
 		display: block;
@@ -141,4 +157,20 @@ q {
 	margin: 0.5em 0;
 	max-width: 95%;
 	width: fit-content;
+}
+
+.how-to-use,
+.settings {
+	// probably for ext-addons this class needs a special value than others how to use
+	padding-left: 2em;
+}
+
+#plugins {
+	.ext-addon {
+		h4 {
+			.explicative {
+				display: block;
+			}
+		}
+	}
 }

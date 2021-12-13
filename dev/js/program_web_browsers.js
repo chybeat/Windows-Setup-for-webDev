@@ -54,8 +54,9 @@ function addWebBrowsers(destination) {
 		li.id = attrValueText(browser.name);
 
 		/* Link info */
-		link = document.createElement("a");
-		text = document.createTextNode(browser.name);
+		let linkContainer = document.createElement("h3");
+		let link = document.createElement("a");
+		let text = document.createTextNode(browser.name);
 		link.title = browser.name;
 		link.href = browser.href;
 		link.target = "_blank";
@@ -71,14 +72,16 @@ function addWebBrowsers(destination) {
 		span.className = "logo inline";
 		span.appendChild(img);
 
+		//append link inner data (image and text)
+		link.appendChild(span);
+
+		linkContainer.appendChild(link);
+
 		/*description container*/
 		desc = document.createElement("span");
 		desc.className = "description";
 		text = document.createTextNode(browser.desc);
 		desc.appendChild(text);
-
-		//append link inner data (image and text)
-		link.appendChild(span);
 
 		secondLink = document.createElement("a");
 		secondLink.title = "Download " + browser.name;
@@ -89,7 +92,7 @@ function addWebBrowsers(destination) {
 		secondLink.appendChild(text);
 
 		/* append link to list*/
-		li.appendChild(link);
+		li.appendChild(linkContainer);
 		li.appendChild(desc);
 		li.appendChild(secondLink);
 

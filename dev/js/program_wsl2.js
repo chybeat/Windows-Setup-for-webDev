@@ -190,6 +190,16 @@ let linuxConfig = [
 		],
 	},
 	{
+		title: "Install Node.js",
+		info: "To install Node.js®, the JavaScript runtime for linux, just type the commnand:",
+		code: "sudo apt install nodejs",
+	},
+	{
+		title: "Install Node Package Manager (npm)",
+		info: "To install npm just type the commnand:",
+		code: "sudo apt install npm",
+	},
+	{
 		title: "Update Linux",
 		info: "The update needs 2 commands, one for retrieve the avaliable updates and other to make the update",
 		code: [
@@ -209,16 +219,6 @@ let linuxConfig = [
 			},
 		],
 	},
-	{
-		title: "Install Node.js",
-		info: "To install Node.js®, the JavaScript runtime for linux, just type the commnand:",
-		code: "sudo apt install nodejs",
-	},
-	{
-		title: "Install Node Package Manager (npm)",
-		info: "To install npm just type the commnand:",
-		code: "sudo apt install npm",
-	},
 ];
 /*
  */
@@ -236,7 +236,7 @@ function addWsl2(destination) {
 	dest.appendChild(title);
 	desc = document.createElement("p");
 	desc.innerHTML =
-		"If automatic installation fails or you want, is possible to activate WSL manually (or automated) following the next steps using Powershell.";
+		"If automatic installation fails, is possible to activate WSL manually (or automated) following the next steps using Powershell.";
 	dest.appendChild(desc);
 	htmlWSL(destination, wslInstructions, "ol");
 

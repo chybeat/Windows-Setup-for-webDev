@@ -1,13 +1,14 @@
-//Instructions for easily installation for WSL
+//NBext var is an instructions to open the Extension viewe panel
 let openExtensionView =
 	"Bring up the Extensions view by clicking on the Extensions icon in the Activity Bar on the side of VS Code or the View: Extensions command <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>X</kbd>).";
 
+//General plugins information
 const plugAddExt = [
 	{
 		name: "Live Server - Web Extension",
 		mainProgram: ["Google Chrome Dev", "Firefox Developer Edition", "Opera Developer"],
 		desc: "This browser add-on is an extension for a developer tool in VS Code editor (Live Server). With this add-on installed, along with the VS Code extension, it gives you a functionality to automatically update your website on save; for other files than just .htm and .html.<br><br>So specifically, with this add-on, live reload will also work with the following server-side files within the spectrum of: PHP, .NET and NodeJS.",
-		icon: "addOn-liveReloadExtension-Logo.svg",
+		icon: "assets/img/addOn-liveReloadExtension-Logo.svg",
 		links: [
 			{
 				specific: true,
@@ -15,7 +16,6 @@ const plugAddExt = [
 				href: "https://chrome.google.com/webstore/detail/live-server-web-extension/fiegdmejfepffgpnejdinekhfieaogmj",
 				text: "Google Chrome Extension",
 				title: "Visit the Live Server Web Extension on chome web store",
-				target: "_blank",
 			},
 			{
 				specific: true,
@@ -23,29 +23,24 @@ const plugAddExt = [
 				href: "https://addons.mozilla.org/en-US/firefox/addon/live-server-web-extension/",
 				text: "Firefox Complement",
 				title: "Visit the Live Server Web Extension on Firefox Browser Add-ons",
-				target: "_blank",
 			},
 		],
 		settings: [
 			{
 				title: "Direct Setup",
-				instruct: [
-					{
-						explain:
-							"If you doesn't coding a server side language (PHP, .NET or NodeJS) you no need to configure the extension in browser, just activate the visual studio code extension makes the refresh on browser. For server side language follow the next steps",
-						steps: [
-							"Install Visual Studio Code from Microsoft. (code editor)",
-							"Install VS Code Live Server. (extension to code editor)",
-							"Install the browser add-on (Chrome or Firefox.)",
-							"Install and run a server on your machine(PHP, .NET or NodeJS)",
-							"Place your app on the server and open your project there.",
-							'Enter the neccesary fields (screenshot below)<ol type="a"><li><strong>Actual Server Address:</strong> is the address where your server is located and the port.</li><li><strong>Live Server Address:<strong> is the address where Visual Studio code extension is running.',
-							"Push the <i>Go Live-button</i> in your editor's statusbar.",
-							"Visit the <i>Actual Server Address<i>",
-						],
-						image: "assets/img/addOn-LiveReloadExtension-DirectSetup.png",
-					},
+				explain:
+					"If you doesn't coding a server side language (PHP, .NET or NodeJS) you no need to configure the extension in browser, just activate the visual studio code extension makes the refresh on browser. For server side language follow the next steps",
+				steps: [
+					"Install Visual Studio Code from Microsoft. (code editor)",
+					"Install VS Code Live Server. (extension to code editor)",
+					"Install the browser add-on (Chrome or Firefox.)",
+					"Install and run a server on your machine(PHP, .NET or NodeJS)",
+					"Place your app on the server and open your project there.",
+					'Enter the neccesary fields (screenshot below)<ol type="a"><li><strong>Actual Server Address:</strong> is the address where your server is located and the port.</li><li><strong>Live Server Address:<strong> is the address where Visual Studio code extension is running.',
+					"Push the <i>Go Live-button</i> in your editor's statusbar.",
+					"Visit the <i>Actual Server Address<i>",
 				],
+				image: "assets/img/addOn-LiveReloadExtension-DirectSetup.png",
 			},
 		],
 	},
@@ -57,49 +52,36 @@ const plugAddExt = [
 		links: [
 			{
 				href: "https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl",
-				text: "Remote - WSL MaketPlace",
+				text: "Visit Remote - WSL MaketPlace",
 				title: "Go to Remote WSL Marketplace page",
-				target: "_blank",
 			},
 		],
 		uses: [
 			{
 				title: "Install from marketplace",
-				instruct: [
-					{
-						image: "assets/img/addOn-remoteWSL-install.png",
-						steps: [
-							"Launch Visual Studio Code.",
-							openExtensionView,
-							'Paste the following text and press enter:<code class="oneline">ms-vscode-remote.remote-wsl</code>',
-							'Click on "install" button',
-						],
-					},
+				image: "assets/img/addOn-remoteWSL-install.png",
+				steps: [
+					"Launch Visual Studio Code.",
+					openExtensionView,
+					'Paste the following text and press enter:<code class="oneline">ms-vscode-remote.remote-wsl</code>',
+					'Click on "install" button',
 				],
 			},
 			{
 				title: "Open Visual Studio Code from WSL terminal",
-				instruct: [
-					{
-						explain:
-							"Launch a new instance of Visual Studio Code connected to WSL by opening a WSL terminal, navigating to the folder of your choice, and typing the code below. First time you launch a Visual Studio Code server will be installed.",
-						code: "code .",
-						image: "addOn-remoteWSL-use-open-vscode-from-linux-terminal.png",
-					},
-				],
+				explain:
+					"Launch a new instance of Visual Studio Code connected to WSL by opening a WSL terminal, navigating to the folder of your choice, and typing the code below. First time you launch from terminal a Visual Studio Code server may will be installed.",
+				code: "code .",
+				image: "assets/img/addOn-remoteWSL-use-open-vscode-from-linux-terminal.png",
 			},
 			{
 				title: "Open a WSL instance from Visual Studio Code",
-				instruct: [
-					{
-						explain:
-							"It's possible to open an instance WSL From Visual Studio Code. select the green remote indicator in the lower left corner of the status bar and selecting the option you want.",
-						image: "addOn-remoteWSL-use-open-wsl-from-vscode.png",
-						steps: [
-							"Select the green remote indicator in the lower left corner of the status bar",
-							"Select the option you want",
-						],
-					},
+				explain:
+					"It's possible to open an instance WSL From Visual Studio Code. select the green remote indicator in the lower left corner of the status bar and selecting the option you want.",
+				image: "assets/img/addOn-remoteWSL-use-open-wsl-from-vscode.png",
+				steps: [
+					"Select the green remote indicator in the lower left corner of the status bar",
+					"Select the option you want",
 				],
 			},
 		],
@@ -108,48 +90,35 @@ const plugAddExt = [
 		name: "Powershell",
 		mainProgram: "Visual Studio Code",
 		desc: "Develop PowerShell modules, commands and scripts in Visual Studio Code!",
-		icon: "addOn-powershellExtension-logo.svg",
+		icon: "assets/img/addOn-powershellExtension-logo.svg",
 		links: [
 			{
-				specific: true,
 				href: "https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell",
-				text: "Powershell support extension for VS Code",
-				title: "Visite the Extension marketplace site",
-				target: "_blank",
+				text: "Visit Powershell Extension marketplace site",
+				title: "Powershell Extension marketplace site",
 			},
 		],
 		uses: [
 			{
 				title: "Install from market place",
-				instruct: [
-					{
-						explain:
-							"Tou can intall the powershell extension from market place, just follow the next steps:",
-						code: "",
-						image: "",
-						steps: [
-							"Launch Visual Studio Code.",
-							openExtensionView,
-							'Paste the following text and press enter:<code class="oneline">ms-vscode.PowerShell</code>',
-							'Click on "install" button',
-						],
-					},
+				explain: "You can intall the powershell extension from market place, just follow the next steps:",
+				steps: [
+					"Launch Visual Studio Code.",
+					openExtensionView,
+					'Paste the following text and press enter:<code class="oneline">ms-vscode.PowerShell</code>',
+					'Click on "install" button',
 				],
 			},
 		],
 		settings: [
 			{
 				title: "Package management update",
-				instruct: [
-					{
-						explain:
-							"The PowerShell extension, can shows a message advertising about PackageManagemnt issues and requires update. Follow next steps and the message dissapears.",
-						steps: [
-							"Launch Powershell with administrator privileges.",
-							"paste the following command, and press enter.<code class=\"oneline\">powershell.exe -NoLogo -NoProfile -Command '[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; Install-Module -Name PackageManagement -Force -MinimumVersion 1.4.6 -Scope CurrentUser -AllowClobber -Repository PSGallery'</code>",
-							"Accept any change and update (NuGet and/or PackageManagement) if asked",
-						],
-					},
+				explain:
+					"The PowerShell extension, can shows a message advertising about PackageManagemnt issues and requires update. Follow next steps to fix.",
+				steps: [
+					"Launch Powershell with administrator privileges.",
+					"paste the following command, and press enter.<code class=\"oneline\">powershell.exe -NoLogo -NoProfile -Command '[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; Install-Module -Name PackageManagement -Force -MinimumVersion 1.4.6 -Scope CurrentUser -AllowClobber -Repository PSGallery'</code>",
+					"Accept any change and update (NuGet and/or PackageManagement) if asked",
 				],
 			},
 		],
@@ -165,34 +134,254 @@ function addOnTo(sourceInfo) {
 
 	if (software.length > 0) {
 		for (var prog of Object.values(software)) {
+			let addonsStated = false;
 			for (var ext of Object.values(plugAddExt)) {
-				// if the extension has the mainprogram name the extension info will be added to the program tag container.
+				// if the extension has the mainprogram name the extension info will be added to the main program tag container.
+
 				if (ext.mainProgram.includes(prog)) {
-					dest = document.querySelector("#" + attrValueText(prog));
-					console.log(extHtml(ext));
-					dest.appendChild(extHtml(ext));
+					let progIdDest = document.querySelector("#" + attrValueText(prog));
+
+					if (!addonsStated) {
+						//Addon generic title
+						let genTitle = document.createElement("h3");
+						genTitle.innerHTML = "VS Code Extensions";
+						progIdDest.appendChild(genTitle);
+						addonsStated = true;
+					}
+					// Adding data to main HTML destination (program or addon section)
+					progIdDest.appendChild(extHtml(ext, prog));
 				}
 			}
 		}
 	}
 }
 
+//code to add all addons in addons container
 function addPlugins(destination) {
-	console.log(destination);
+	let dest = document.querySelector(destination);
+	for (var ext of Object.values(plugAddExt)) {
+		dest.appendChild(extHtml(ext, "allSoftware"));
+	}
 }
 
-function extHtml(extData) {
+function extHtml(extData, host) {
 	//be carefull returns html Object!
+
+	//obtaining the addon link information specific for the host software
+	var link;
+	if (extData.links.length > 1 && host != "allSoftware") {
+		for (var addonLinkInfo of Object.values(extData.links)) {
+			if (addonLinkInfo.program.includes(host)) {
+				link = addonLinkInfo;
+			}
+		}
+	} else {
+		link = extData.links[0];
+	}
 
 	//Extension container
 	let mainExtContainer = document.createElement("div");
 	mainExtContainer.className = "ext-addon";
 
+	//Extension Name link
+	let extName = document.createElement("h4");
+
+	//Extension Icon
+	var extIconConainter = document.createElement("span");
+	extIconConainter.className = "logo inline";
+
+	let extIcon = document.createElement("img");
+	extIcon.src = extData.icon;
+	extIcon.alt = "Icon " + extData.name;
+	extIconConainter.appendChild(extIcon);
+
+	//adding name and icon into title container
+	if (host != "allSoftware") {
+		let tittleText = document.createTextNode(extData.name);
+		let extLink = document.createElement("a");
+		extLink.title = extData.name + " for " + host;
+		extLink.target = "_blank";
+		extLink.href = link.href;
+		extLink.appendChild(extIconConainter);
+		extLink.appendChild(tittleText);
+		extName.appendChild(extLink);
+		mainExtContainer.appendChild(extName);
+	} else {
+		let tittleText = document.createTextNode(extData.name);
+		extName.appendChild(extIconConainter);
+		extName.appendChild(tittleText);
+		//!! Sepecial add a addon host software reference (Only for all addons list) to extension main container
+		let hostContainer = document.createElement("span");
+		hostContainer.className = "explicative";
+
+		hostContainerText = "For ";
+		if (typeof extData.mainProgram == "object") {
+			hostContainerText += extData.mainProgram.toString().replaceLast(",", " and ").replace(",", ", ");
+		} else {
+			hostContainerText += extData.mainProgram.toString();
+		}
+		hostContainer.innerText = hostContainerText;
+
+		extName.appendChild(hostContainer);
+	}
+
+	//Extension description
+	let extDescContainer = document.createElement("p");
+	extDescContainer.innerHTML = extData.desc;
+
+	//Adding title and description to the addon container
+	mainExtContainer.appendChild(extName);
+	mainExtContainer.appendChild(extDescContainer);
+
+	//Adding Link button
+	if (host != "allSoftware") {
+		let buttonText = "Download " + extData.name + " for " + host;
+		let tittleText = document.createTextNode(buttonText);
+		let extButtonLink = document.createElement("a");
+		extButtonLink.title = buttonText;
+		extButtonLink.target = "_blank";
+		extButtonLink.className = "button";
+		extButtonLink.href = link.href;
+		extButtonLink.appendChild(tittleText);
+		mainExtContainer.appendChild(extButtonLink);
+	} else {
+		for (linkData of extData.links) {
+			if ("object" == typeof linkData.program) {
+				for (prog of linkData.program) {
+					var extButtonLink = document.createElement("a");
+					let buttonText = document.createTextNode("Download for " + prog);
+					extButtonLink.title = linkData.title;
+					extButtonLink.target = "_blank";
+					extButtonLink.className = "button";
+					extButtonLink.href = link.href;
+					extButtonLink.appendChild(buttonText);
+					mainExtContainer.appendChild(extButtonLink);
+				}
+			} else {
+				let extButtonLink = document.createElement("a");
+				let buttonText = document.createTextNode(linkData.text);
+				extButtonLink.title = linkData.title;
+				extButtonLink.target = "_blank";
+				extButtonLink.className = "button";
+				extButtonLink.href = link.href;
+				extButtonLink.appendChild(buttonText);
+				mainExtContainer.appendChild(extButtonLink);
+			}
+		}
+	}
+	//Adding uses or how to use
+	if (extData.uses) {
+		let usesContainer = document.createElement("div");
+		usesContainer.className = "how-to-use";
+		let usesTitle = document.createElement("h5");
+		usesTitle.innerText = "How to...";
+
+		//adding Main "how to..." title to how to uses container
+		usesContainer.appendChild(usesTitle);
+
+		var usesList = document.createElement("ul");
+
+		for (use of extData.uses) {
+			let useItemContainer = document.createElement("li");
+			//title
+			let useTitle = document.createElement("h6");
+			useTitle.innerText = use.title;
+			useItemContainer.appendChild(useTitle);
+
+			//explanation
+			if (use.explain) {
+				let useExplain = document.createElement("p");
+				useExplain.innerHTML = use.explain;
+				useItemContainer.appendChild(useExplain);
+			}
+
+			if (use.image) {
+				let useImage = document.createElement("img");
+				useImage.src = use.image;
+				useImage.className = "img-guide";
+				useImage.alt = attrValueText("how to use " + use.title);
+				useItemContainer.appendChild(useImage);
+			}
+
+			if (use.code) {
+				let useCode = document.createElement("code");
+				useCode.innerText = use.code;
+				useItemContainer.appendChild(useCode);
+			}
+
+			if (use.steps) {
+				let stepsList = document.createElement("ol");
+				for (step of use.steps) {
+					let stepContainer = document.createElement("li");
+					stepContainer.innerHTML = step;
+					stepsList.appendChild(stepContainer);
+				}
+				useItemContainer.appendChild(stepsList);
+			}
+			usesList.appendChild(useItemContainer);
+		}
+		//adding uses cotainer to main extension container
+		usesContainer.appendChild(usesList);
+		mainExtContainer.appendChild(usesContainer);
+	}
+	//Adding settings
+	if (extData.settings) {
+		let setsContainer = document.createElement("div");
+		setsContainer.className = "settings";
+		let setsTitle = document.createElement("h6");
+		setsTitle.innerText = "Settings for " + extData.name;
+		//adding title to how to use container
+		setsContainer.appendChild(setsTitle);
+		var setsList = document.createElement("ul");
+
+		for (set of extData.settings) {
+			let setItemContainer = document.createElement("li");
+
+			//title
+			let setTitle = document.createElement("h6");
+			setTitle.innerText = set.title;
+			setItemContainer.appendChild(setTitle);
+
+			//explanation
+			if (set.explain) {
+				let setExplain = document.createElement("p");
+				setExplain.innerHTML = set.explain;
+				setItemContainer.appendChild(setExplain);
+			}
+
+			if (set.image) {
+				let setImage = document.createElement("img");
+				setImage.src = set.image;
+				setImage.className = "img-guide";
+				setImage.alt = attrValueText("setting " + set.title);
+				setItemContainer.appendChild(setImage);
+			}
+
+			if (set.code) {
+				let setCode = document.createElement("code");
+				setCode.innerText = set.code;
+				setItemContainer.appendChild(setCode);
+			}
+
+			if (set.steps) {
+				let stepsList = document.createElement("ol");
+				for (step of set.steps) {
+					let stepContainer = document.createElement("li");
+					stepContainer.innerHTML = step;
+					stepsList.appendChild(stepContainer);
+				}
+				setItemContainer.appendChild(stepsList);
+			}
+			setsList.appendChild(setItemContainer);
+		}
+
+		//adding settings container to main extension container
+		mainExtContainer.appendChild(setsContainer);
+		mainExtContainer.appendChild(setsList);
+	}
+
 	return mainExtContainer;
 }
-
-/*
- */
 
 /*
 	{
@@ -207,54 +396,61 @@ function extHtml(extData) {
 				href : "",
 				text : "",
 				title : "",
-				target : ""
 			}
 		],
 		uses : [
 			{
 				title : "",
-				instruct : [
-					{
-						explain : "",
-						code : "",
-						image : "",
-						steps : [
-							"",
-						]
-					}
+				explain : "",
+				code : "",
+				image : "",
+				steps : [
+					"",
+				]
+			},
+			{
+				title : "",
+				explain : "",
+				code : "",
+				image : "",
+				steps : [
+					"",
 				]
 			}
 		],
 		settings : [
 			{
 				title : "",
-				instruct : [
-					{
-						explain : "",
-						code : "",
-						image : "",
-						steps : [
-							"",
-						]
-					}
+				explain : "",
+				code : "",
+				image : "",
+				steps : [
+					"",
+				]
+			},
+			{
+				title : "",
+				explain : "",
+				code : "",
+				image : "",
+				steps : [
+					"",
 				]
 			}
+
 		]
 	}
 */
-/*
-<li>
-<!-- Start of VsCode  Plugins-->
-????update Node.js:
-npm install -g
-npm-windows-upgrade -p -v latest
 
+/*
+
+<!-- Start of VsCode  Plugins-->
 <p>Extension to install:</p>
 <ul>
 	<li>
 		<p>
 			<span class="logo inline"
-				><img class="remoteWSL" src="assets/img/prettierLogo.svg" /></span
+				><img class="prettier" src="assets/img/prettierLogo.svg" /></span
 			><strong><u>Prettier - Code formatter</u>:</strong
 			><a target="_blank" href="https://prettier.io/">https://prettier.io/</a>
 		</p>

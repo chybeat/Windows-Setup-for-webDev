@@ -11,7 +11,32 @@ const winUtils = [
 				target: "_blank",
 			},
 		],
+		configs: [
+			{
+				instruction: "Update/upgrade NPM (Node Package manager) for Windows. (run from Windows console)",
+				steps: [
+					{
+						explain: "Fix warnings and issues for NPM",
+						code: "npm audit fix --force",
+					},
+					{
+						explain: "Install NPM upgrade software for windows",
+						code: "npm install --global --production npm-windows-upgrade",
+					},
+					{
+						explain: "Run upgrade to get latest NPM version",
+						code: "npm-windows-upgrade -p -v latest",
+					},
+				],
+			},
+		],
 	},
+	/*
+update npm:
+- 
+- 
+
+*/
 	{
 		name: "Ruby",
 		logo: "assets/img/winUtil-rubyLogo.svg",
@@ -77,6 +102,12 @@ const winUtils = [
 					{
 						explain:
 							"In <q>Profiles</q> area click on <q>Command Prompt</q>, click on <q>Appearance</q> tab and choose the color scheme <q>Campbell</q> then change the font face to <q>Consolas</q>.",
+					},
+					{
+						explain:
+							"In <q>Profiles</q> area, click in <q>Ubuntu</q> click on <q>Starting Directoy</q> input and set the  .",
+						code: "\\\\wsl$\\{Linux_distro_and_ver}\\home\\{linux_username}",
+						altern: "For example \\\\wsl$\\Ubuntu-20.04\\home\\Linuxito. To get the exact path, open a linux terminal, run <code>cd</code> and then run <code>explorer.exe .</code>",
 					},
 					{
 						explain:
@@ -292,15 +323,15 @@ function addWinUtils(destination) {
 		//creating the header for current util
 		header = document.createElement("header");
 
+		//util name title
+		utilNameTitle = document.createElement("h3");
+
 		//Title with link to download page
 		titleLink = document.createElement("a");
 		titleLink.href = util.links[0].href;
 		titleLink.target = util.links[0].target;
 		titleLink.title = util.links[0].text;
-
-		//util name title
-		utilNameTitle = document.createElement("h3");
-		utilNameTitle.innerHTML = util.name;
+		titleLink.innerHTML = util.name;
 
 		//util logo container
 		containerLogo = document.createElement("span");
@@ -313,11 +344,11 @@ function addWinUtils(destination) {
 		containerLogo.appendChild(logo);
 
 		// Adding title
-		titleLink.appendChild(utilNameTitle);
-		titleLink.appendChild(containerLogo);
+		utilNameTitle.appendChild(titleLink);
+		utilNameTitle.appendChild(containerLogo);
 
-		// Addiing header
-		header.appendChild(titleLink);
+		// Addiing header (title name and link)
+		header.appendChild(utilNameTitle);
 
 		//Adding optional Links
 		if (util.links.length > 1) {
@@ -334,9 +365,20 @@ function addWinUtils(destination) {
 		article.appendChild(header);
 
 		// Adding Description
-		desc = document.createElement("p");
+		let desc = document.createElement("p");
 		desc.innerHTML = util.desc;
 		article.appendChild(desc);
+
+		//Adding the download button or second (to view) link as button
+		let secondLink = document.createElement("a");
+		let text = document.createTextNode(util.links[0].text);
+		secondLink.title = "Download " + util.name;
+		secondLink.href = util.links[0].href;
+		secondLink.target = "_blank";
+		secondLink.className = "button";
+		secondLink.appendChild(text);
+
+		article.appendChild(secondLink);
 
 		// Adding configurations and instructions
 

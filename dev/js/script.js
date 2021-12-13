@@ -1,6 +1,6 @@
 function attrValueText(text) {
-	let searchRegExp = /[^A-Za-z-_0-9]/gm;
-	let whiteSpecaRegExp = /\s/g;
+	let searchRegExp = /[^A-Za-z-0-9]/gm;
+	let whiteSpecaRegExp = /[\s\/\\]/g;
 	text = text.replace(whiteSpecaRegExp, "-").toLowerCase();
 	var result = text.trim().replace(searchRegExp, "");
 	return result;
@@ -47,7 +47,6 @@ window.onload = function () {
 	//every article that needs to be filled
 	addWebBrowsers("#webBrowsers"); //Web Brosers data from program_web_browser.js
 	addOnTo(browsersData);
-
 	addWsl2("#wsl"); //Windows subsystem Linux 2 data from program_wsl2.js
 	addWinUtils("#winUtils"); //Windows utilities and configs from program_win_utils.js
 	addOnTo(winUtils);
