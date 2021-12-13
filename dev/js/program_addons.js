@@ -8,7 +8,7 @@ const plugAddExt = [
 		name: "Live Server - Web Extension",
 		mainProgram: ["Google Chrome Dev", "Firefox Developer Edition", "Opera Developer"],
 		desc: "This browser add-on is an extension for a developer tool in VS Code editor (Live Server). With this add-on installed, along with the VS Code extension, it gives you a functionality to automatically update your website on save; for other files than just .htm and .html.<br><br>So specifically, with this add-on, live reload will also work with the following server-side files within the spectrum of: PHP, .NET and NodeJS.",
-		icon: "assets/img/addOn-liveReloadExtension-Logo.svg",
+		icon: "assets/img/addOn-liveReloadExtension-logo.svg",
 		links: [
 			{
 				specific: true,

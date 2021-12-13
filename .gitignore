@@ -1,4 +1,4 @@
 -- Data no page/
+.vscode/
 *.code-workspace
 dev
-.vscode
