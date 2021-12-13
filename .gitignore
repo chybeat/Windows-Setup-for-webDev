@@ -1,4 +1,4 @@
 -- Data no page/
-*.png
-*.gif
-*.jpg
+*.code-workspace
+dev
+.vscode
