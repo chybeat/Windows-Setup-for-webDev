@@ -79,10 +79,7 @@ const plugAddExt = [
 				explain:
 					"It's possible to open an instance WSL From Visual Studio Code. select the green remote indicator in the lower left corner of the status bar and selecting the option you want.",
 				image: "assets/img/addOn-remoteWSL-use-open-wsl-from-vscode.png",
-				steps: [
-					"Select the green remote indicator in the lower left corner of the status bar",
-					"Select the option you want",
-				],
+				steps: ["Select the green remote indicator in the lower left corner of the status bar", "Select the option you want"],
 			},
 		],
 	},
@@ -483,6 +480,10 @@ function extHtml(extData, host) {
 			preferences (JSON) file (Recomend for development and prettier
 			<code class="oneline">"prettier.printWidth": 140,</code>
 			default is 80).
+			"prettier.tabWidth": 3, (to format using tab width of 3 spaces)
+			"prettier.useTabs": true, (to format using tabs instead spaces)
+			"editor.defaultFormatter": "esbenp.prettier-vscode", // to use prettier to formal all language
+	
 		</p>
 	</li>
 	<li>
@@ -511,43 +512,6 @@ function extHtml(extData, host) {
 		<p>
 			<code>"color-highlight.matchWords": true,</code>
 			- If a color word is found apply the highlight
-		</p>
-		<p>
-			<code>"color-highlight.markRuler": true,</code>
-			- Show colored square in scroll bar to indentify where a color is set.
-		</p>
-	</li>
-	<li>
-		<p>
-			<span class="logo inline"
-				><img
-					class="bracketPairColorizer-icon"
-					src="assets/img/bracketPairColorizer.png" /></span
-			><strong><u>Bracket pair colorizer</u>:</strong
-			><a
-				target="_blank"
-				href="https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer"
-				>https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer</a
-			>
-		</p>
-		<p>
-			This extension allows matching brackets to be identified with colours. The user can
-			define which characters to match, and which colours to use.
-		</p>
-		<p>
-			<strong>Install: </strong>Launch VS Code Quick Open pressing
-			<strong>Ctrl + P</strong>, paste the following command, and press enter.
-			<code>ext install CoenraadS.bracket-pair-colorizer</code>
-		</p>
-		<p>
-			<strong>Configuration: </strong> Press <strong>Ctrl + P</strong> to pen Command
-			Palette, type
-			<code>&gt;Preferences: Open Settings (JSON)</code>
-			to enter the configurations:
-		</p>
-		<p>
-			<code> "bracketPairColorizer.showBracketsInGutter": true,</code>
-			- View brackets near line counter (left side of the code)
 		</p>
 		<p>
 			<code>"color-highlight.markRuler": true,</code>
@@ -615,81 +579,10 @@ function extHtml(extData, host) {
 	<li>¿¿Sass scss??</li>
 	
 
-	Linux
-	(tree) para ver un arbol de carpetas desde linux sudo apt install tree , despues $sudo apt-get update
-	(net-tools) sudo apt install net-tools
-
 	<li></li>
 	</ul>
 
 
 <!-- End of VsCodse -->
-https://code.visualstudio.com/docs/languages/javascript -> read for linter
-
-*/
-
-/*
-function htmlWSL (destination,object,ListType){
-	let dest = document.querySelector(destination);
-	//main list tag
-	mainList = document.createElement(ListType);
-	
-	for (var wslInst of Object.values(object)) {
-		// Generate the li tag for current element list 
-		li = document.createElement("li");
-
-		//title container 
-		title = document.createElement("h3");
-		text = document.createTextNode(wslInst.title);
-		title.appendChild(text);
-		li.appendChild(title);
-
-		//info container 
-		info = document.createElement("p");
-		info.innerHTML=wslInst.info;
-		li.appendChild(info);
-
-		//code container 
-		if(typeof(wslInst.code) != "undefined" && typeof(wslInst.code) == "string"){
-			code = document.createElement("code");
-			code.className = "oneline";
-			code.innerHTML=wslInst.code;
-			li.appendChild(code);
-		}else if(typeof(wslInst.code) != "undefined" && typeof(wslInst.code) == "object"){
-			codeList = document.createElement("ol");
-			for (var cl of Object.values(wslInst.code)) {
-				liCode = document.createElement("li");
-				p =  document.createElement("p");
-				p.innerHTML=cl.info;
-				liCode.appendChild(p);
-				if(typeof(cl.text) != "undefined"){
-					code = document.createElement("code");
-					code.className = "oneline";
-					code.innerHTML = cl.text;
-					liCode.appendChild(code);
-				}
-				codeList.appendChild(liCode);
-			}
-			li.appendChild(codeList);
-		}
-
-		if(typeof(wslInst.links) != "undefined"){
-			for (var wslLinks of Object.values(wslInst.links)) {
-				link = document.createElement("a");
-				link.appendChild(document.createTextNode(wslLinks.text));
-				link.title = wslLinks.text;
-				if(typeof(wslLinks.target) != "undefined"){
-					link.target = wslLinks.target;
-				}
-				link.className = "oneline"
-				link.href = wslLinks.href;
-				li.appendChild(link);
-			}
-		}
-		
-		mainList.appendChild(li);
-
-	}
-	dest.appendChild(mainList);
-}
+	https://code.visualstudio.com/docs/languages/javascript -> read for linter
 */

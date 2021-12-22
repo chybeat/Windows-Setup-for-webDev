@@ -89,10 +89,46 @@ const codeEditors = [
 				code: '"editor.formatOnSave": true,',
 			},
 			{
+				title: "Enabled bracket pair Colorization",
+				desc: "Set color to matched brackets pairs (open to close) {}, [] () <>",
+				code: '"editor.bracketPairColorization.enabled": true',
+			},
+			{
+				title: "Enable bracket pair guide",
+				desc: "Enable draw a line guide between bracket pairs () [] {} <>",
+				code: '"editor.guides.bracketPairs":"active"',
+			},
+			{
+				title: "Insert tabulation instead spaces",
+				desc: "Force VS Code to set a tabulation character instead of spaces (ie: for identation)",
+				code: '"editor.insertSpaces": false,',
+			},
+			{
+				title: "Remove tooltips",
+				desc: "Remove tooltips about code when put mouse cursor over a command, tag, function, etc.",
+				code: '"editor.hover.enabled": false,',
+			},
+			{
+				title: "Enable tooltips only for CSS",
+				desc: "If you use CSS tooltips from vscode (ie. to read property specificity), set the next code in settings.json",
+				code: '"editor.hover.enabled": false,"[css]":{"editor.hover.enabled": true},',
+			},
+			{
 				title: "Mouse Wheel Zoom",
 				desc: "Enable window zooming using <kbd>Ctrl</kbd> + <kbd>Mouse wheel</kbd> (up or down)",
 				code: '"editor.mouseWheelZoom": true,',
 			},
+			{
+				title: "Tabulation size",
+				desc: "Specifies how many spaces a tabulation character wide use (default: 4)",
+				code: '"editor.tabSize": 3,',
+			},
+			{
+				title: "Word Wrap",
+				desc: "Set the wordwrap option enabled for all files.",
+				code: '"editor.wordWrap": "on",',
+			},
+
 			{
 				title: "Insert Final Newline",
 				desc: "Insert a final empty line at every files on save",
@@ -108,7 +144,6 @@ const codeEditors = [
 				desc: "Set the default command line terminal used in VSCode. This shows the code as demo, paste the code in settings.js, then use the pencil in left side before the line number you paste, and choice your preference",
 				code: '"terminal.integrated.defaultProfile.windows": "Testing",',
 			},
-
 			{
 				title: "Powershell run buttons",
 				desc: "Show the Run and Run Selection buttons in the editor titlebar to test powershell scripts.",

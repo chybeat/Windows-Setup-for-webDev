@@ -176,16 +176,20 @@ let linuxConfig = [
 				text: "sudo apt install findutils",
 			},
 			{
+				info: "Install htop (process viewer / killer)",
+				text: "sudo apt install htop",
+			},
+			{
+				info: "Install net and internet tools",
+				text: "sudo apt install net-tools",
+			},
+			{
 				info: "Install tree to visualize the directory and files list in tree format",
 				text: "sudo apt install tree",
 			},
 			{
 				info: "Install zip compressor",
 				text: "sudo apt install zip",
-			},
-			{
-				info: "Install htop (process viewer / killer)",
-				text: "sudo apt install htop",
 			},
 		],
 	},
