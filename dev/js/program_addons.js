@@ -42,6 +42,17 @@ const plugAddExt = [
 				],
 				image: "assets/img/addOn-LiveReloadExtension-DirectSetup.png",
 			},
+			{
+				title: "Set Chrome Dev or non listed web browser to open html files",
+				explain:
+					"By default, live server open the browser configured in SO as default browser, the extension has an option to select which browser open when click on \"Open with Live Server \", but the list doesn't have Opera or Google Chrome Dev. You can setup using a 'setings.json' parameter.",
+				steps: [
+					'Bring up settings.json file by presing <kbd>Ctrl</kbd> + <kbd>P</kbd> to open "Go to file..." or <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> to open the Command Palette',
+					"write <code>&gt; Preferences: Open Settings (JSON)</code>, select the exact match and press <kbd>Enter ⏎</kbd> ",
+					'Set <code>"liveServer.settings.AdvanceCustomBrowserCmdLine": "C:\\\\Program Files\\\\Google\\\\Chrome Dev\\\\Application\\\\chrome.exe"</code><br>Be careful in your google chome dev path and double backslashes',
+					"Save settings.json file, and it's ready",
+				],
+			},
 		],
 	},
 	{
